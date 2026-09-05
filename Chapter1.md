@@ -29,7 +29,7 @@ $$L(f, P, [a, b]) = \sum_{j=1}^n (x_j - x_{j-1}) inf_{[x_{j-1}, x_j]} f$$
 
 and
 
-$$U(f, P, [a, b]) = sum_{j=1}^n (x_j - x_{j-1}) sup_{[x_{j-1}, x_j]} f .$$
+$$U(f, P, [a, b]) = \sum_{j=1}^n (x_j - x_{j-1}) sup_{[x_{j-1}, x_j]} f .$$
 
 
 
