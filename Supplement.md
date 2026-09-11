@@ -194,6 +194,27 @@ $$\lvert L - a_k \rvert_\inf < \frac{1}{k} .$$
 The inequality above implies that the sequence $a_1, a_2, ...$ of elements of $A$ has limit $L$. Thus there exists a convergent sequence of elements of $A$ whose limit is not in $A$, completing the proof in the other direction.
 
 
+### 0.63 De Morgan's Laws
+Suppose $\matcal{A}$ is a collection of subsets of some set $X$. Then
+
+$$X \ \cup_{E \in \mathcal{A}} E = \cap_{E \in \mathcal{A}} (X \ E)$$
+
+and
+
+$$X \ \cap_{E \in \mathcal{A}} E = \cup_{E \in \mathcal{A}} (X \ E) .$$
+
+Proof:
+
+An element $x \in X$ is not in $\cup_{E \in \mathcal{A}} E$ if and only if $x$ is not in $E$ for every $E \in \mathcal{A}$. Thus the first equality above holds.
+
+An element $x \in X$ is not in $\cap_{E \in \mathcal{A}} E$ if and only if $x$ is not in $E$ for some $E \in \mathcal{A}$. Thus the second equality holds.
+
+
+### 0.64 union and intersection of closed sets
+- The intersection of every collection of closed subsets of $R^n$ is a closed subset of $R^n$.
+- The union of every finite collection of closed subsets of $R^n$ is a closed subset of $R^n$.
+
+
 ### 0.65 sets that are both open and closed
 The only subsets of $R^n$ that are both open and closed are $\emptyset$ and $R^n$.
 
