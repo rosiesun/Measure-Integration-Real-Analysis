@@ -13,7 +13,7 @@ The length $l(I)$ of an open interval $I$ is defined by
 $$
 l(I) =
 \begin{cases}
-b - a & \text{if $I = (a, b)$ for some $a, b \in \mathbb{R}$ with $a < b$} \\
+b - a & \text{if $I = (a, b)$ for some $a, b \in \mathbf{R}$ with $a < b$} \\
 0 & \text{if $I = \emptyset$} \\
 \infty & \text{if $I = (-\infty, a)$ or $I = (a, \infty)$ for some $a \in mathbb{R}$} \\
 \infty & \text{if $I = (-\infty, \infty)$}
@@ -22,16 +22,18 @@ $$
 
 
 ### 2.2 Definition: outer measure
-The outer measure $|A|$ of a set $A \subset \mathbb{R}$ is defined by
+The outer measure $|A|$ of a set $A \subset \mathbf{R}$ is defined by
 
-$$|A| = \text{inf $\{\sum_{k=1}^\infty l(I_k): I_1, I_2, ...$ are open intervals such that $A \subset \cup_{k=1}^\infty I_k$ \} .$$
+$$|A| = \text{inf $\{\sum_{k=1}^\infty l(I_k): I_1, I_2, ...$ are open intervals such that $A \subset \cup_{k=1}^\infty I_k$ \} }.$$
 
 
 ### 2.4 countable sets have outer measure 0
-Every countable subset of $\mathbb{R}$ has outer measure 0.
+Every countable subset of $\mathbf{R}$ has outer measure 0.
 
 
 ### 2.5 outer measure preserves order
+
+
 
 ### 2.6 Definition: translation
 
