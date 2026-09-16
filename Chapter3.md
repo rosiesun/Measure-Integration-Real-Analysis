@@ -32,7 +32,7 @@ $$\int \chi_E d\mu = \mu(E) .$$
 ### 3.7 integral of a simple function
 Suppose $(X, S, \mu)$ is a measure space, $E_1, ..., E_n$ are disjoint sets in $S$, and $c_1, ..., c_n \in [0, \infty]$. Then
 
-$$\int (\sum_{k=1}^n c_k \chi_{E_k}) d\mu = \sum_{k=1}^n c_k \mu(E_k) .$$
+$$\int \left( \sum_{k=1}^n c_k \chi_{E_k} \right) d\mu = \sum_{k=1}^n c_k \mu(E_k) .$$
 
 
 ### 3.8 integration is order-preserving
@@ -42,7 +42,7 @@ Suppose $(X, S, \mu)$ is a measure space and $f, g: X \rightarrow [0, \infty]$ a
 ### 3.9 integrals via simple functions
 Suppose $(X, S, \mu)$ is a measure space and $f: X \rightarrow [0, \infty]$ is $S$-measurable. Then
 
-$$\int f d\mu = sup \{\sum_{j=1}^m c_j \mu(A_j): A_1, ..., A_m \text{ are disjoint sets in } S, c_1, ..., c_m \in [0, \infty), f(x) \geq \sum_{j=1}^m c_j \chi_{A_j}(x) \forall x \in X \}$$
+$$\int f d\mu = sup \\{\sum_{j=1}^m c_j \mu(A_j): A_1, ..., A_m \text{ are disjoint sets in } S, c_1, ..., c_m \in [0, \infty), f(x) \geq \sum_{j=1}^m c_j \chi_{A_j}(x) \forall x \in X \\}$$
 
 
 ### 3.11 Monotone Convergence Theorem
@@ -100,7 +100,7 @@ if the right side of the equation above is defined; otherwise $\int_E f d\mu$ is
 ### 3.25 bounding an integral
 Suppose $(X, S, \mu)$ is a measure space, $E \in S$, and $f: X \rightarrow [\infty, \infty]$ is a function such that $\int_E f d\mu$ is defined. Then
 
-$$|\int_E f d\mu| \leq \mu(E) sup_E |f| .$$
+$$\left| \int_E f d\mu \right| \leq \mu(E) sup_E |f| .$$
 
 
 ### 3.26 Bounded Convergence Theorem
