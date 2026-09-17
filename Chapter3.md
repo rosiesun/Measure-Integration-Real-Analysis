@@ -42,7 +42,7 @@ Suppose $(X, S, \mu)$ is a measure space and $f, g: X \rightarrow [0, \infty]$ a
 ### 3.9 integrals via simple functions
 Suppose $(X, S, \mu)$ is a measure space and $f: X \rightarrow [0, \infty]$ is $S$-measurable. Then
 
-$$\int f d\mu = sup \\{\sum_{j=1}^m c_j \mu(A_j): A_1, ..., A_m \text{ are disjoint sets in } S, c_1, ..., c_m \in [0, \infty), f(x) \geq \sum_{j=1}^m c_j \chi_{A_j}(x) \forall x \in X \\}$$
+$$\int f d\mu = sup \left\\{\sum_{j=1}^m c_j \mu(A_j): A_1, ..., A_m \text{ are disjoint sets in } S, c_1, ..., c_m \in [0, \infty), f(x) \geq \sum_{j=1}^m c_j \chi_{A_j}(x) \forall x \in X \right\\}$$
 
 
 ### 3.11 Monotone Convergence Theorem
@@ -68,7 +68,7 @@ $$\sum_{j=1}^m a_j \mu(A_j) = \sum_{k=1}^n b_k \mu(B_k).$$
 ### 3.15 integral of a linear combination of characteristic functions
 Suppose $(X, S, \mu)$ is a measure space, $E_1, ..., E_n \in S$, and $c_1, ..., c_n \in [0, \infty]$. Then
 
-$$\int (\sum_{k=1}^n c_k \chi_{E_k} d\mu = \sum_{k=1}^n c_k $$
+$$\int \left( \sum_{k=1}^n c_k \chi_{E_k} \right) d\mu = \sum_{k=1}^n c_k $$
 
 
 ### 3.16 additivity of integration 
@@ -80,7 +80,7 @@ $$\int (f + g) d\mu = \int f d\mu + \int g d\mu .$$
 ### 3.23 absolute value of integral $\leq$ integral of absolute value
 Suppose $(X, S, \mu)$ is a measure space and $f: X \rightarrow [-\infty, \infty]$ is a function such that $\int f d\mu$ is defined. Then
 
-$$\left| \int f d\mu \right| = \int |f| d\mu .$$
+$$\left| \int f d\mu \right| \leq \int |f| d\mu .$$
 
 
 
@@ -118,14 +118,35 @@ Suppose $(X, S, \mu)$ is a measure space. A set $E \in S$ is said to contain $\m
 
 
 ### 3.28 integrals on small sets are small
+Suppose $(X, S, \mu)$ is a measure space, $g: X \rightarrow [0, \infty]$ is $S$-measurable, and $\int g d\mu < \infty$. Then for every $\epsilon > 0$, there exists $\delta > 0$ such that 
+
+$$\int_B g d\mu < \epsilon$$
+
+for every set $B \in S$ such that $\mu(B) < \delta$.
 
 
 ### 3.29 integrable functions live mostly on sets of finite measure
+Suppose $(X, S, \mu)$ is a measure space, $g: X \rightarrow [0, \infty]$ is $S$-measurable, and $\int g d\mu < \infty$. Then for every $\epsilon > 0$, there exists $E \in S$ such that $\mu(E) < \infty$ and
 
+$$\int_{X \ E} g d\mu < \epsilon .$$
 
 
 ### 3.31 Dominated Convergence Theorem
-Suppose 
+Suppose $(X, S, \mu)$ is a measure space, $f: X \rightarrow [-\infty, \infty]$ is $S$-measurable, and $f_1, f_2, ...$ are $S$-measurable functions from $X$ to $[-\infty, \infty]$ such that
+
+$$lim_{k \rightarrow \infty} f_k(x) = f(x)$$
+
+for almost every $x \in X$. If there exists an $S$-measurable function $g: X \rightarrow [0, \infty]$ such that 
+
+$$\int g d\mu < \infty$$
+
+and
+
+$$|f_k(x) \leq g(x)|$$
+
+for every $k \in Z^+$ and almost every $x \in X$, then
+
+$$lim_{k \rightarrow \infty} \int f_k d\mu = \int f d\mu .$$
 
 
 ### 3.40 Definition: $\lvert f \rvert_1$, $L^1(\mu)$
