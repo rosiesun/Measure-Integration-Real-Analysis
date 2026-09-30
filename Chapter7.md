@@ -7,4 +7,5 @@ Rosie Sun <br>
 
 # 7A $\mathcal{L}^p(\mu)$
 
-### 7.3
+### 7.3 Definition
+Suppose $(X, S, \mu)$ is a measure space and $0 < p \leq \infty$. The Lebesgue space $\mathcal{L}^p$
