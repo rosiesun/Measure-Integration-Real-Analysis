@@ -9,3 +9,6 @@ Rosie Sun <br>
 
 ### 7.3 Definition
 Suppose $(X, S, \mu)$ is a measure space and $0 < p \leq \infty$. The Lebesgue space $\mathcal{L}^p$
+
+
+$\mathcal{R}$  $\mathscr{R}$  $\mathbb{R}$  $\mathbf{R}$
