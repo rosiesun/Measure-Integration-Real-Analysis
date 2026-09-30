@@ -14,7 +14,7 @@ $$\lVert f \rVert_p = \left( \int |f|^p d\mu \right)^{1/p} .$$
 
 Also, $\lVert f \rVert_\infty$, which is called the essential supremum of $f$, is defined by
 
-$$\lVert f \rVert = inf \{ t > 0: \mu(\{x \in X: |f(x)| > t\}) = 0 \} .$$
+$$\lVert f \rVert = inf \\{ t > 0: \mu(\\{x \in X: |f(x)| > t\\}) = 0 \\} .$$
 
 
 ### 7.3 Definition: $\mathcal{L}^p(\mu)$
