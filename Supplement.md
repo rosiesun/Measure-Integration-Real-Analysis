@@ -242,6 +242,85 @@ Thus we arrive at a contradiction whether $c \in A$ or $c \in R^n \ A$, completi
 
 
 
+## Exercises D
+
+### (1) Suppose $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $R^n$. Prove that $lim_{k \to \infty} (a_k + c_k) = lim_{k \to \infty} a_k + lim_{k \to \infty} c_k$.
+
+Let $lim_{k \to \infty} a_k = A$ and $lim_{k \to \infty} c_k = C$ for some $A, C \in R^n$.
+
+Let $\epsilon > 0$. By 0.46, there exists $m_1 \in Z^+$ such that $\lVert a_k - A \rVert_\infty < \epsilon/2$ for all $k \geq m_1$, and there exists $m_2 \in Z^+$ such that $\lVert c_k - C \rVert_\infty < \epsilon/2$ for all $k \geq m_2$.
+
+Let $M = max(m_1, m_2)$. Then we have $\lVert a_k - A \rVert_\infty < \epsilon/2$ for all $k \geq M \geq m_1$ and $\lVert c_k - C \rVert_\infty < \epsilon/2$ for all $k \geq M \geq m_2$.
+
+By the triangle inequality, 
+
+$$
+\begin{aligned}
+\lVert (a_k + c_k) - (A + C) \rVert_\infty 
+    &= \lVert (a_k - A) + (c_k - C) \rVert_\infty \\
+    &\leq \lVert a_k - A \rVert_\infty + \lVert c_k - C \rVert_\infty \\
+    &< \epsilon
+\end{aligned}
+$$
+
+Thus for all $k \geq M$, $\lVert (a_k + c_k) - (A + C) \rVert_\infty < \epsilon$.
+
+Hence we conclude 
+
+$$lim_{k \to \infty} (a_k + c_k) = A + C = lim_{k \to \infty} a_k + lim_{k \to \infty} c_k$$
+
+
+
+### (2) Suppose $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $R$. Prove that $lim_{k \to \infty} (a_k c_k) = (lim_{k \to \infty} a_k)(lim_{k \to \infty} c_k)$.
+
+Let $lim_{k \to \infty} a_k = A$ and $lim_{k \to \infty} c_k = C$.
+
+First we want to show that since $a_1, a_2, ...$ is a convergent sequence in $R$, it is bounded.
+
+Let $\epsilon = 1$. There exists $m \in Z^+$ such that $|a_k - A| < \epsilon$ for all $k \geq m$. By the triangle inequality, we have
+
+$$|a_k| \leq |a_k - A| + |A| < 1 + |A|$$
+
+for all $k \geq m$.
+
+Let $N = max \\{|a_1|, |a_2|, ..., |a_{m-1}|, 1 + |A|\\}$. Then for each $k < m$, $|a_k| \leq N$. For each $k \geq m$, $|a_k| < 1 + |A| \leq N$. 
+
+Thus $|a_k| \leq N < \infty$ for all $k \in Z^+$, and the sequence is bounded.
+
+Now we want to show that $a_k c_k$ converges to $AC$.
+
+Note that we have
+
+$$
+\begin{aligned}
+|a_k c_k - AC| 
+    &= |a_k c_k - AC + a_k C - a_k C| \\
+    &= |a_k (c_k - C) + C (a_k - A)| \\
+    &\leq |a_k (c_k - C)| + |C (a_k - A)| \\
+    &= |a_k| |c_k - C| + |C| |a_k - A| \\
+    &\leq N |c_k - C| + |C| |a_k - A|
+\end{aligned}
+$$
+
+Let $\epsilon > 0$. There exists $m_1 \in Z^+$ such that $|a_k - A| < \frac{\epsilon}{2(|C|+1)}$ for all $k \geq m_1$. There exists $m_2 \in Z^+$ such that $|c_k - C| < \frac{\epsilon}{2(N+1)}$ for all $k \geq m_2$. 
+
+Let $m = max \\{m_1, m_2\\}$. Then for all $k \geq m$, 
+
+$$
+\begin{aligned}
+|a_k c_k - AC| 
+    &\leq N |c_k - C| + |C| |a_k - A| \\
+    &< N \frac{\epsilon}{2(N+1)} + |C| \frac{\epsilon}{2(|C|+1)} \\
+    &< \epsilon/2 + \epsilon/2 \\
+    &= \epsilon
+\end{aligned}
+$$
+
+Thus $a_k c_k$ converges to $AC$. Hence we conclude 
+
+$$lim_{k \to \infty} (a_k c_k) = AC = (lim_{k \to \infty} a_k) (lim_{k \to \infty} c_k) .$$
+
+
 
 # E Sequences and Continuity
 
