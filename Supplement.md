@@ -310,3 +310,92 @@ Thus
 $$lim_{j \rightarrow \inf} (g(a_{k_j}) - g(b_{k_j})) = 0. $$
 
 The equation above contradicts the inequality $\lvert g(a_k) - g(b_k) \rvert_\inf \geq \epsilon$, which holds for all $k \in Z^+$. This contradiction means that our assumption that $g$ is not uniformly continuous is false, completing the proof.
+
+
+
+# Exercises E
+
+### (1) Prove that every convergent sequence of elements of $R^n$ is bounded.
+
+Suppose $a_1, a_2, ...$ is a convergent sequence in $R^n$. Let $lim_{k \to \infty} a_k = L$ for some $L \in R^n$. 
+
+Let $\epsilon = 1$. By 0.46, there exists $m \in Z^+$ such that $\lVert a_k - L \rVert_\infty < 1$ for all $k \geq m$.
+
+By the triangle inequality, we have for all $k \geq m$
+
+$$\lVert a_k \rVert_\infty \leq \lVert a_k - L \rVert_\infty + \lVert L \rVert_\infty < 1 + \lVert L \rVert_\infty .$$
+
+Let 
+
+$$M = max \\{ \lVert a_1 \rVert_\infty, ..., \lVert a_{m-1} \rVert_\infty, 1 + \lVert L \rVert_\infty \\} .$$
+
+Since $\lVert L \rVert_\infty$ is a real number and the set has a finite numbe of elements, $M$ is a real number.
+
+Then for $k \geq m$, 
+
+$$\lVert a_k \rVert_\infty \leq 1 + \lVert L \rVert_\infty \leq M$$
+
+and for $k \in \\{1, ..., m-1\\}$,
+
+$$\lVert a_k \rVert_\infty \leq M .$$
+
+Thus for all $k \in Z^+$, 
+
+$$\lVert a_k \rVert_\infty \leq M .$$
+
+Hence we conclude 
+
+$$sup \\{\lVert a_k \rVert_\infty: k \in Z^+ \\} \leq M < \infty$$ 
+
+and the sequence $a_1, a_2, ...$ is bounded.
+
+
+
+### (2) Prove that a sequence of elements of $R^n$ converges if and only if every subsequence of the sequence converges.
+
+$\Rightarrow$
+
+Suppose $a_1, a_2, ...$ is a sequence in $R^n$ that converges. Let $lim_{k \to \infty} a_k = L$ for some $L \in R^n$. 
+
+We want to show that all subsequences of the form $a_{k_1}, a_{k_2}, ...$ where $k_1 < k_2 < ...$ converges to $L$. 
+
+Suppose $\epsilon > 0$. There exists $m \in Z^+$ such that $\lVert a_k - L \rVert_\infty < \epsilon$ for all $k \geq m$. 
+
+Since $k_1 < k_2 < ...$ are positive integers, $k_i \geq i$ for each $i \in Z^+$. So if $i \geq m$, then $k_i \geq m$.
+
+Thus $\lVert a_{k_i} - L \rVert_\infty < \epsilon$ for all $k_i \geq m$. 
+
+Hence we conclude every subsequence of the sequence $a_1, a_2, ...$ converges to the same limit $L$.
+
+$\Leftarrow$
+Suppose every subsequence of the sequence converges.
+
+By 0.70, a sequence is a subsequence of itself, if we take $k_i = i$ for each $i \in Z^+$. Thus if every subsequence of the sequence converges, then the sequence converges.
+
+
+
+### (3) Prove the converse of 0.74. Specifically, prove that if $F$ is a subset of $R^n$ with the property that every sequence of elements of $F$ has a subsequence that converges to an element of $F$, then $F$ is closed and bounded.
+
+First we want to show that $F$ is bounded. Assume towards contradiction that $F$ is not bounded. 
+
+Then $sup \\{ \lVert a \rVert_\infty: a \in F \\} = \infty$. 
+
+For every $k \in Z^+$, we can find an element $a_k \in F$ such that $\lVert a_k \rVert_\infty > k$, so the sequence is not bounded.
+
+By hypothesis, $a_1, a_2, ...$ has a subsequence $a_{k_1}, a_{k_2}, ...$ that converges to an element of $F$, which we call $L$. Every convergent sequence is bounded (by Exercise 1). 
+
+Since $k_i \geq i$ for each $i \in Z^+$, we have $\lVert a_{k_i} \rVert_\infty > k_i \geq i$ for every $i \in Z^+$. Thus the subsequence is unbounded, which is a contradiction. 
+
+Hence we conclude that $F$ is bounded.
+
+Next we want to show that $F$ is closed.
+
+Suppose $a_1, a_2, ...$ is a convergent sequence in $F$ with limit $M$. By hypothesis, it has a convergent subsequence $a_{k_1}, a_{k_2}, ...$ which converges to $L \in F$. 
+
+Let $\epsilon > 0$. There exists $m \in Z^+$ such that $\lVert a_k - M \rVert_\infty < \epsilon$ for all $k \geq m$. 
+
+Since $k_i >= i$ for each $i \in Z^+$, for all $i \geq m$, we have $\lVert a_{k_i} - M \rVert_\infty < \epsilon$ for all $k_i \geq i \geq m$. Thus $lim_{k_i \to \infty} a_{k_i} = M$.
+
+Since $a_{k_1}, a_{k_2}, ...$ converges to $L$, by the uniqueness of limit, $L = M$ and $M \in F$. 
+
+By 0.62, $F$ is closed. 
