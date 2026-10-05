@@ -273,11 +273,11 @@ $$lim_{k \to \infty} (a_k + c_k) = A + C = lim_{k \to \infty} a_k + lim_{k \to \
 
 ### (2) Suppose $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $R$. Prove that $lim_{k \to \infty} (a_k c_k) = (lim_{k \to \infty} a_k)(lim_{k \to \infty} c_k)$.
 
-Let $lim_{k \to \infty} a_k = A$ and $lim_{k \to \infty} c_k = C$.
+Let $lim_{k \to \infty} a_k = A$ and $lim_{k \to \infty} c_k = C$ for some $A, C \in R$.
 
 First we want to show that since $a_1, a_2, ...$ is a convergent sequence in $R$, it is bounded.
 
-Let $\epsilon = 1$. There exists $m \in Z^+$ such that $|a_k - A| < \epsilon$ for all $k \geq m$. By the triangle inequality, we have
+Let $\epsilon = 1$. There exists $m \in Z^+$ such that $|a_k - A| < 1$ for all $k \geq m$. By the triangle inequality, we have
 
 $$|a_k| \leq |a_k - A| + |A| < 1 + |A|$$
 
@@ -304,7 +304,7 @@ $$
 
 Let $\epsilon > 0$. There exists $m_1 \in Z^+$ such that $|a_k - A| < \frac{\epsilon}{2(|C|+1)}$ for all $k \geq m_1$. There exists $m_2 \in Z^+$ such that $|c_k - C| < \frac{\epsilon}{2(N+1)}$ for all $k \geq m_2$. 
 
-Let $m = max \\{m_1, m_2\\}$. Then for all $k \geq m$, 
+Let $M = max \\{m_1, m_2\\}$. Then for all $k \geq M$, 
 
 $$
 \begin{aligned}
@@ -319,6 +319,67 @@ $$
 Thus $a_k c_k$ converges to $AC$. Hence we conclude 
 
 $$lim_{k \to \infty} (a_k c_k) = AC = (lim_{k \to \infty} a_k) (lim_{k \to \infty} c_k) .$$
+
+
+
+### (3) Prove or give a counterexample: If $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $R$ and $c_k \neq 0$ for each $k \in Z^+$, then $lim_{k \to \infty} a_k / c_k = (lim_{k \to \infty} a_k) / (lim_{k \to \infty} c_k)$.
+
+The statement is not true and we provide a counterexample.
+
+Suppose $a_k = 1, k \in Z^+$ and $c_k = \frac{1}{k}, k \in Z^+$.
+
+Then we can see that $lim_{k \to \infty} a_k = 1$ and $lim_{k \to \infty} c_k = 0$. 
+
+Thus the sequence $\frac{a_k}{c_k} = k, k \in Z^+$ is not convergent. 
+
+
+
+### (4) Suppose $a \in R$. Prove that there exists a sequence $a_1, a_2, ...$ of rational numbers such that $a = lim_{k \to \infty} a_k$. 
+
+By 0.30, there is a rational number between every two distinct real numbers. Thus there exists $a_k$ such that $a < a_k < a + \frac{1}{k}$, for all $k \in Z^+$, where $a, a + \frac{1}{k} \in R$.
+
+Let $\epsilon > 0$. There exists $m \in Z^+$ such that $\frac{1}{m} < \epsilon$ by the Archimedean property. For all $k \geq m$, we have
+
+$$|a - a_k| < \frac{1}{k} \leq \frac{1}{m} < \epsilon$$
+
+Hence there exists a sequence of rational numbers $a_1, a_2, ...$ such that $a = lim_{k \to \infty} a_k$.
+
+
+
+### (5) Suppose $a \in R$. Prove that there exists a sequence $a_1, a_2, ...$ of irrational numbers such that $a = lim_{k \to \infty} a_k$.
+
+Same argument as (4), invoking 0.39 (there is an irrational number between every two distint real numbers) instead of 0.30.
+
+
+
+### (8) Suppose $G$ is an open subset of $R$. Prove that $inf G \notin G$ and $sup G \notin G$.
+
+If $G$ is empty then $\inf G = \infty$, if $G$ has no lower bound then $\inf G = -\infty$. In either case, $inf G \notin G$ vacuously. Thus suppose $inf G = a$ for some $a \in R$. 
+
+Assume towards contradiction that $a \in G$.
+
+Since $G$ is open, there exists $\delta > 0$ such that $(a - \delta, a + \delta) \subseteq G$. Then $a - \frac{\delta}{2} \in G$. But this contradicts the fact that $a$ is a lower bound of $G$.
+
+Hence we conclude $inf G \notin G$.
+
+Similarly we conclude $sup G \notin G$ by the same argument.
+
+
+### (9) Suppose $F$ is a nonempty closed set of positive numbers. Prove that $inf F \in F$.
+
+Since $F$ is nonempty and bounded below by 0, $\inf F \in R$. Let $\inf F = a$.
+
+Assume towards contradiction that $a \notin F$. Then $a \in R \setminus F$ where $R \setminus F$ is an open subset of $R$. 
+
+Since $R \ F$ is open, there exists $\delta > 0$ such that $(a - \delta, a + \delta) \subseteq R \setminus F$. We have 
+
+$$[a, a + \frac{\delta}{2} ] \subset (a - \delta, a + \delta) \subseteq R \setminus F .$$
+
+There is no $x \in F$ such that $a \leq x \leq a + \frac{\delta}{2}$. Thus $a + \frac{\delta}{2}$ is a lower bound of $F$. 
+
+This contradicts the fact that $a$ is the greatest lower bound of $F$.
+
+Hence we conclude $\inf F \in F$.
 
 
 
