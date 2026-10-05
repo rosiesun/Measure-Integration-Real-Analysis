@@ -131,11 +131,11 @@ Now suppose $a < 0$. If $b > 0$, then take $c = 0$. If $b \leq 0$, then apply th
 ### 0.46 Definition: limit
 Suppose $a_1, a_2, ... \in R^n$ and $L \in R^n$. Then $L$ is called a limit of the sequence $a_1, a_2, ...$ and we write 
 
-$$lim_{k \rightarrow \inf} a_k = L$$
+$$lim_{k \rightarrow \infty} a_k = L$$
 
 if for every $\epsilon > 0$, there exists $m \in Z^+$ such that 
 
-$$\lvert a_k - L \rvert_inf < \epsilon$$
+$$\lvert a_k - L \rvert_infty < \epsilon$$
 
 for all integers $k \geq m$.
 
@@ -147,7 +147,7 @@ A sequence in $R^n$ is said to converge and to be a convergent sequence if it ha
 ### 0.49 Definition: open cube
 For $x \in R^n$ and $\delta > 0$, the open cube $B(x, \delta)$ is defined by
 
-$$B(x, \delta) = \\{y \in R^n: \lvert y - x \rvert_\inf < \delta \\} .$$
+$$B(x, \delta) = \\{y \in R^n: \lvert y - x \rvert_\infty < \delta \\} .$$
 
 
 ### 0.52 Definition: open subsets of $R^n$
@@ -168,7 +168,7 @@ First suppose $A$ is a subset of $R^n$ such that some convergent sequence $a_1, 
 
 Because $lim_{k \rightarrow \inf} a_k = L$, for each $\delta > 0$ there exists $k \in Z^+$ such that 
 
-$$\lvert L - a_k \rvert_\inf < \delta .$$ 
+$$\lvert L - a_k \rvert_\infty < \delta .$$ 
 
 Thus $L \in R^n \ A$ and 
 
@@ -189,7 +189,7 @@ for every $k \in Z^+$.
 
 Thus for each $k \in Z^+$, there exists $a_k \in A$ such that 
 
-$$\lvert L - a_k \rvert_\inf < \frac{1}{k} .$$
+$$\lvert L - a_k \rvert_\infty < \frac{1}{k} .$$
 
 The inequality above implies that the sequence $a_1, a_2, ...$ of elements of $A$ has limit $L$. Thus there exists a convergent sequence of elements of $A$ whose limit is not in $A$, completing the proof in the other direction.
 
@@ -352,7 +352,7 @@ Same argument as (4), invoking 0.39 (there is an irrational number between every
 
 
 
-### (8) Suppose $G$ is an open subset of $R$. Prove that $inf G \notin G$ and $sup G \notin G$.
+### (8) Suppose $G$ is an open subset of $R$. Prove that $\inf G \notin G$ and $\sup G \notin G$.
 
 If $G$ is empty then $\inf G = \infty$, if $G$ has no lower bound then $\inf G = -\infty$. In either case, $inf G \notin G$ vacuously. Thus suppose $inf G = a$ for some $a \in R$. 
 
@@ -362,10 +362,10 @@ Since $G$ is open, there exists $\delta > 0$ such that $(a - \delta, a + \delta)
 
 Hence we conclude $inf G \notin G$.
 
-Similarly we conclude $sup G \notin G$ by the same argument.
+Similarly we conclude $\sup G \notin G$ by the same argument.
 
 
-### (9) Suppose $F$ is a nonempty closed set of positive numbers. Prove that $inf F \in F$.
+### (9) Suppose $F$ is a nonempty closed set of positive numbers. Prove that $\inf F \in F$.
 
 Since $F$ is nonempty and bounded below by 0, $\inf F \in R$. Let $\inf F = a$.
 
@@ -386,11 +386,11 @@ Hence we conclude $\inf F \in F$.
 # E Sequences and Continuity
 
 ### 0.68 Definition: bounded
-- A set $A \subseteq R^n$ is called bounded if $sup \\{\lvert a \rvert_\inf : a \in A \\} < \inf$.
+- A set $A \subseteq R^n$ is called bounded if $\sup \\{\lvert a \rvert_\infty : a \in A \\} < \infty$.
 
 - A function into $R^n$ is called bounded if its range is a bounded subset of $R^n$.
 
-- As a special case of the previous bullet point, a sequence $a_1, a_2, ...$ of elements of $R^n$ is called bounded if $sup \\{\lvert a_k \rvert_\inf : k \in Z^+ \\} < \inf$.
+- As a special case of the previous bullet point, a sequence $a_1, a_2, ...$ of elements of $R^n$ is called bounded if $\sup \\{\lvert a_k \rvert_\infty : k \in Z^+ \\} < \infty$.
 
 
 ### 0.74 characterization of closed bounded sets
@@ -416,11 +416,11 @@ Suppose $F$ is a closed bounded subset of $R^m$ and $g: F \rightarrow R^n$ is co
 
 Suppose $g$ is not uniformly continuous. Then there exists $\epsilon > 0$ such that for each $k \in Z^+$, there exist $a_k, b_k \in F$ with 
 
-$$\lvert a_k - b_k \rvert_\inf < \farc{1}{k}$$
+$$\lvert a_k - b_k \rvert_\infty < \farc{1}{k}$$
 
 and
 
-$$\lvert g(a_k) - g(b_k) \rvert_\inf \geq \epsilon.$$
+$$\lvert g(a_k) - g(b_k) \rvert_\infty \geq \epsilon.$$
 
 Because $F$ is bounded, the sequence $a_1, a_2, ...$ is bounded. Thus by the Bolzano-Weierstrass Theorem (0.73), some subsequence $a_{k_1}, a_{k_2}, ...$ converges to some limit $a$. Because $F$ is closed, we have $a \in F$ by 0.62.
 
@@ -428,28 +428,28 @@ Now
 
 $$
 \begin{aligned}
-\lvert a - b_{k_j} \rvert_\inf 
-    &= \lvert (a - a_{k_j}) + (a_{k_j} - b_{k_j}) \rvert_\inf \\
-    &\leq \lvert a - a_{k_j} \rvert_\inf + \lvert a_{k_j} - b_{k_j} \rvert_\inf \\
-    &< \lvert a - a_{k_j} \rvert_\inf + \frac{1}{k_j}
+\lvert a - b_{k_j} \rvert_\infty
+    &= \lvert (a - a_{k_j}) + (a_{k_j} - b_{k_j}) \rvert_\infty \\
+    &\leq \lvert a - a_{k_j} \rvert_\inf + \lvert a_{k_j} - b_{k_j} \rvert_\infty \\
+    &< \lvert a - a_{k_j} \rvert_\infty + \frac{1}{k_j}
 \end{aligned}
 $$
 
-which implies that $lim_{j \rightarrow \inf} b_{k_j} = a$.
+which implies that $lim_{j \rightarrow \infty} b_{k_j} = a$.
 
-Because $g$ is continuous at $a$ and $lim_{j \rightarrow \inf} a_{k_j} = a$ and $lim_{j \rightarrow \inf} b_{k_j} = a$, we conclude that
+Because $g$ is continuous at $a$ and $lim_{j \rightarrow \infty} a_{k_j} = a$ and $lim_{j \rightarrow \infty} b_{k_j} = a$, we conclude that
 
-$$lim_{j \rightarrow \inf} g(a_{k_j}) = g(a)$$
+$$lim_{j \rightarrow \infty} g(a_{k_j}) = g(a)$$
 
 and
 
-$$lim_{j \rightarrow \inf} g(b_{k_j}) = g(a) .$$
+$$lim_{j \rightarrow \infty} g(b_{k_j}) = g(a) .$$
 
 Thus 
 
-$$lim_{j \rightarrow \inf} (g(a_{k_j}) - g(b_{k_j})) = 0. $$
+$$lim_{j \rightarrow \infty} (g(a_{k_j}) - g(b_{k_j})) = 0. $$
 
-The equation above contradicts the inequality $\lvert g(a_k) - g(b_k) \rvert_\inf \geq \epsilon$, which holds for all $k \in Z^+$. This contradiction means that our assumption that $g$ is not uniformly continuous is false, completing the proof.
+The equation above contradicts the inequality $\lvert g(a_k) - g(b_k) \rvert_\infty \geq \epsilon$, which holds for all $k \in Z^+$. This contradiction means that our assumption that $g$ is not uniformly continuous is false, completing the proof.
 
 
 
@@ -485,7 +485,7 @@ $$\lVert a_k \rVert_\infty \leq M .$$
 
 Hence we conclude 
 
-$$sup \\{\lVert a_k \rVert_\infty: k \in Z^+ \\} \leq M < \infty$$ 
+$$\sup \\{\lVert a_k \rVert_\infty: k \in Z^+ \\} \leq M < \infty$$ 
 
 and the sequence $a_1, a_2, ...$ is bounded.
 
@@ -518,7 +518,7 @@ By 0.70, a sequence is a subsequence of itself, if we take $k_i = i$ for each $i
 
 First we want to show that $F$ is bounded. Assume towards contradiction that $F$ is not bounded. 
 
-Then $sup \\{ \lVert a \rVert_\infty: a \in F \\} = \infty$. 
+Then $\sup \\{ \lVert a \rVert_\infty: a \in F \\} = \infty$. 
 
 For every $k \in Z^+$, we can find an element $a_k \in F$ such that $\lVert a_k \rVert_\infty > k$, so the sequence is not bounded.
 
@@ -539,3 +539,101 @@ Since $k_i >= i$ for each $i \in Z^+$, for all $i \geq m$, we have $\lVert a_{k_
 Since $a_{k_1}, a_{k_2}, ...$ converges to $L$, by the uniqueness of limit, $L = M$ and $M \in F$. 
 
 By 0.62, $F$ is closed. 
+
+
+
+### (5) Prove 0.76. Suppose $A \subseteq R^m$ and $f: A \to R^n$ is a function. Suppose $b \in A$. Then $f$ is continuous at $b$ if and only if $lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ...$ in $A$ such that $lim_{k \to \infty} b_k = b$. 
+
+$\Rightarrow$
+
+Suppose $f$ is continuous at $b$. We want to show that $lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ... \in A$ such that $lim_{k \to \infty} b_k = b$.
+
+Let $b_1, b_2, ...$ be a sequence in $A$ such that $lim_{k \to \infty} b_k = b$.
+
+Let $\epsilon > 0$. There exists $\delta > 0$ such that $\lVert f(a) - f(b) \rVert_\infty < \epsilon$ for all $a \in A$ with $\lVert a - b \rVert_\infty < \delta$. There exists $M \in Z^+$ such that $\lVert b_k - b \rVert_\infty < \delta$ for all $k \geq M$. 
+
+Thus for all $k \geq M$, $\lVert f(b_k) - f(b) \rVert_\infty < \epsilon$. 
+
+Hence we conclude that $lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ...$ in $A$ such that $lim_{k \to \infty} b_k = b$.
+
+$\Leftarrow$
+
+Suppose $lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ...$ in $A$ such that $lim_{k \to \infty} b_k = b$. 
+
+Assume towards contradiction that $f$ is not continuous at $b$.
+
+Then there exists some $\epsilon > 0$ such that, for all $\delta > 0$, there is some $a \in A$ such that $\lVert a - b \rVert_\infty < \delta$ but $\lVert f(a) - f(b) \rVert_\infty \geq \epsilon$.
+
+In particular, for each $k \in Z^+$, taking $\delta = \frac{1}{k}$ gives $\lVert a_k - b \rVert_\infty < \frac{1}{k}$ and $\lVert f(a_k) - f(b) \rVert_\infty \geq \epsilon$.
+
+We can see that $lim_{k \to \infty} a_k = b$. 
+
+By hypothesis, $lim_{k \to \infty} f(a_k) = f(b)$. There exists $N \in Z^+$ such that $\lVert f(a_N) - f(b) \rVert_\infty < \epsilon$. We have arrivded at a contradiction.
+
+Hence we conclude that $f$ is continuous at $b$.
+
+
+
+### (6) Show that the function $f: (0, \infty) \to R$ defined by $f(x) = \frac{1}{x}$ is not uniformly continuous.
+
+We want to show that $f(x) = \frac{1}{x}$ is not uniformly continuous, i.e., there exists $\epsilon > 0$ such that for all $\delta > 0$, $|f(a) - f(b)| \geq \epsilon$ and $|a-b| < \delta$ for some $a, b \in (0, \infty)$.
+
+Let $\epsilon = \frac{1}{2}$. Let $\delta > 0$. By the Archimedean property, choose $k \in Z^+$ such that $\delta < \frac{1}{k}. 
+
+Let $a = \frac{1}{k+1}$ and $b = \frac{1}{k}$, $a, b \in (0, \infty)$. Then
+
+$$|\frac{1}{k+1} - \frac{1}{k}| = \frac{1}{k(k+1)} < \frac{1}{k} < \delta$$
+
+but
+
+$$|f(\frac{1}{k+1}) - f(\frac{1}{k}) | = (k+1) - k = 1 > \frac{1}{2} .$$
+
+Thus for $\epsilon = \frac{1}{2}$, no $\delta > 0$ works.
+
+Hence we conclude $f(x) = \frac{1}{x}$ is not uniformly continuous.
+
+
+### (7) Suppose $p \in (0, \infty)$. Show that the function $f: R \to R$ defined by $f(x) = |x|^p$ is uniformly continuous if and only $p \in (0, 1]$.
+
+
+
+### (8) Prove or give a counterexample: If $f: R \to R$ is a bounded continuous function, then $f$ is uniformly continuous.
+
+
+### (9) Prove or give a counterexample: If $f: (0, 1) \to R$ is a bounded continuous function, then $f$ is uniformly continuous.
+
+
+### (13) Prove or give a counterexample: If $f: R^m \to R^n$ is continuous and $\lVert f(x) \rVert < \frac{1}{\lVert x \rVert}$ for all $x \in R^m$ with $\lVert x \rVert > 1$, then $f$ is uniformly continuous.
+
+
+### (14) Prove or give a counterexample: The sum of two uniformly continuous functions from $R^m$ to $R^n$ is uniformly continuous.
+
+
+
+### (15) Prove or give a counterexample: The product of two uniformly continuous functions from $R$ to $R$ is uniformly continuous.
+
+
+
+### (16) Prove or a give a counterexample: If $f: R \to (0, \infty)$ is uniformly continuous, then the function $\frac{1}{f}$ is uniformly continuous on $R$.
+
+
+
+### (17) Prove or give a counterexample: If $f, g: R \to R$ are uniformly continuous functions, then the composition $f \circ g: R \to R$ is uniformly continuous.
+
+
+### (18) Suppose $h: R^m \to R^n$ is a function. Prove that $h$ is continuous if and only if $h^{-1} (G)$ is an open subset of $R^m$ for every open subset of $G$ of $R^n$.
+
+
+### (19) Suppose $h: R^m \to R^n$ is a function. Prove that $h$ is continuous if and only if $h^{-1} (F)$ is a closed subset of $R^m$ for every closed subset $F$ of $R^n$.
+
+
+### (32) Prove that every convergent sequence of elements of $R^n$ is a Cauchy sequence.
+
+
+### (33) 
+#### (a) Prove that every Cauchy sequence of elements of $R^n$ is bounded.
+
+#### (b) Prove that if some subseqeunce of a Cauchy sequence of elements of $R^n$ converges to some $L \in R^n$, then the Cauchy sequence has limit $L$.
+
+#### (c) Prove that every Cauchy sequence of elements of $R^n$ converges.
+
