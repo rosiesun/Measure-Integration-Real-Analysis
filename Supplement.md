@@ -546,7 +546,7 @@ By 0.62, $F$ is closed.
 
 $\Rightarrow$
 
-Suppose $f$ is continuous at $b$. We want to show that $lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ... \in A$ such that $lim_{k \to \infty} b_k = b$.
+Suppose $f$ is continuous at $b$. We want to show that $lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ... \in A$ where $lim_{k \to \infty} b_k = b$.
 
 Let $b_1, b_2, ...$ be a sequence in $A$ such that $lim_{k \to \infty} b_k = b$.
 
@@ -558,7 +558,7 @@ Hence we conclude that $lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_
 
 $\Leftarrow$
 
-Suppose $lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ...$ in $A$ such that $lim_{k \to \infty} b_k = b$. 
+Suppose $lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ...$ in $A$ where $lim_{k \to \infty} b_k = b$. 
 
 Assume towards contradiction that $f$ is not continuous at $b$.
 
@@ -578,15 +578,15 @@ Hence we conclude that $f$ is continuous at $b$.
 
 We want to show that $f(x) = \frac{1}{x}$ is not uniformly continuous, i.e., there exists $\epsilon > 0$ such that for all $\delta > 0$, $|f(a) - f(b)| \geq \epsilon$ and $|a-b| < \delta$ for some $a, b \in (0, \infty)$.
 
-Let $\epsilon = \frac{1}{2}$. Let $\delta > 0$. By the Archimedean property, choose $k \in Z^+$ such that $\delta < \frac{1}{k}. 
+Let $\epsilon = \frac{1}{2}$. Let $\delta > 0$. By the Archimedean property, choose $k \in Z^+$ such that $\frac{1}{k} < \delta$. 
 
 Let $a = \frac{1}{k+1}$ and $b = \frac{1}{k}$, $a, b \in (0, \infty)$. Then
 
-$$|\frac{1}{k+1} - \frac{1}{k}| = \frac{1}{k(k+1)} < \frac{1}{k} < \delta$$
+$$\left| \frac{1}{k+1} - \frac{1}{k} \right| = \frac{1}{k(k+1)} < \frac{1}{k} < \delta$$
 
 but
 
-$$|f(\frac{1}{k+1}) - f(\frac{1}{k}) | = (k+1) - k = 1 > \frac{1}{2} .$$
+$$\left| f(\frac{1}{k+1}) - f(\frac{1}{k}) \right| = (k+1) - k = 1 > \frac{1}{2} .$$
 
 Thus for $\epsilon = \frac{1}{2}$, no $\delta > 0$ works.
 
@@ -594,6 +594,85 @@ Hence we conclude $f(x) = \frac{1}{x}$ is not uniformly continuous.
 
 
 ### (7) Suppose $p \in (0, \infty)$. Show that the function $f: R \to R$ defined by $f(x) = |x|^p$ is uniformly continuous if and only $p \in (0, 1]$.
+
+First we want to show that $f(x) = |x|^p$ is not uniformly continuous when $p > 1$. There exists $\epsilon > 0$ such that, for all $\delta > 0$, we have $|b-a| < \delta$ but $|f(b) - f(a)| \geq \epsilon$ for some $a, b \in R$.
+
+Let $\epsilon = frac{p}{2}$.
+
+Let $\delta > 0$. Take $n \in Z^+$ such that $n^{1-p} < \delta$. This is doable because $p > 1$, so $n^{1-p} \to 0$ as $n \to \infty$.
+
+Consider $a = n$ and $b = n + n^{1-p}$. Since 
+
+$$f''(n) = p (p-1) n^{p-2} > 0,$$
+
+the function is convex at $x \in [a, b]$. We have
+
+$$
+\begin{aligned}
+f(n + n^{1-p}) 
+    &\geq f(n) + f'(n) (n^{1-p}) \\
+    &= n^p + p n^{p-1} n^{1-p} \\
+    &= n^p + p
+\end{aligned}
+$$
+
+and
+
+$$f(n + n^{1-p}) - f(n) \geq n^p + p - n^p = p .$$
+
+Thus for $\epsilon = \frac{p}{2}$, $\forall \delta > 0$, we have found
+
+$$|b-a| = n^{1-p} < \delta$$
+
+but
+
+$$|f(b) - f(a)| \geq p > \frac{p}{2} .$$
+
+Hence we conclude that $f(x) = |x|^p$ is not uniformly continuous when $p > 1$.
+
+Now we want to show that $f(x) = |x|^p$ is uniformly continuous when $p \in (0, 1]$. For every $\epsilon > 0$, there exists $\delta > 0$ such that $|f(a) - f(b)| < \epsilon$ for all $a, b \in R$ with $|a-b| < \delta$.
+
+Before we prove the claim, we will prove this lemma needed in the proof: For $p \in (0, 1]$ and $s, t \geq 0$, $(s+t)^p \leq s^p + t^p$.
+
+Let $\lambda = \frac{s}{s + t} \in [0, 1]$. We have $\lambda^p \geq \lambda$ and $(1 - \lambda)^p \geq 1 - \lambda$. Then
+
+$$\lambda^p + (1 - \lambda)^p \geq \lambda + (1 - \lambda) = 1$$
+
+Substituting back $\lambda = \frac{s}{s+t}$, we have
+
+$$\frac{s^p}{(s+t)^p} + \frac{t^p}{(s+t)^p} \geq 1$$
+
+Multiplying $(s+t)^p$ to both sides, we obtain the desired inequality:
+
+$$s^p + t^p \geq (s+t)^p.$$
+
+Now we are going to prove the claim. Let $\epsilon > 0$. Let $\delta = \epsilon^{1/p}$. Let $x, y \in R$ with $|x-y| < \delta$. 
+
+By the triangle inequality, we have
+
+$$|x| = |x - y + y| \leq |x - y| + |y|$$
+
+Since $t \to t^p$ is non-decreasing on $[0, \infty)$, the inequality is preserved if we raise it to the power of $p$. Then we can use the lemma from above.
+
+$$|x|^p \leq (|x - y| + |y|)^p \leq |x-y|^p + |y|^p$$
+
+Thus we have
+
+$$|x|^p - |y|^p \leq |x-y|^p .$$
+
+Since the same inequality would hold if we flip the role of $x$ and $y$, i.e. $|y|^p - |x|^p \leq |y-x|^p$, we can conclude
+
+$$
+\begin{aligned}
+\left| |x|^p - |y|^p \right| 
+    &\leq |x-y|^p \\
+    &< \delta^p \\
+    &= (\epsilon^{1/p})^p \\
+    &< \epsilon
+\end{aligned}
+$$
+
+Hence we conclude that $f(x) = |x|^p$ is uniformly continuous when $p \in (0, 1]$.
 
 
 
