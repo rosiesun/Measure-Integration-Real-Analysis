@@ -89,15 +89,15 @@ An ordered field $F$ is called complete if every nonempty subset of $F$ that has
 # C Supremum and Infimum
 
 ### 0.28 Archimedean property
-Suppose $t \in R$. Then there is a positive integer $n$ such that $t < n$.
+Suppose $t \in \mathbb{R}$. Then there is a positive integer $n$ such that $t < n$.
 
 
 ### 0.29 Archimediean property
-Suppose $\epsilon \in R$ and $\epsilon > 0$. Then there is a positive integer $n$ such that $\frac{1}{n} < \epsilon$. 
+Suppose $\epsilon \in \mathbb{R}$ and $\epsilon > 0$. Then there is a positive integer $n$ such that $\frac{1}{n} < \epsilon$. 
 
 
 ### 0.30 rational number between every two distinct real numbers
-Suppose $a, b \in R$, with $a < b$. Then there exists a rational number $c$ such that $a < c < b$.
+Suppose $a, b \in \mathbb{R}$, with $a < b$. Then there exists a rational number $c$ such that $a < c < b$.
 
 Proof:
 
@@ -107,7 +107,7 @@ $$\frac{1}{n} < b - a .$$
 
 Let 
 
-$$A = \left\{m \in Z: a < \frac{m}{n} \right\} .$$
+$$A = \left\\{m \in Z: a < \frac{m}{n} \right\\} .$$
 
 By the Archimedean property (0.28), there is a positive integer $m$ such that $an < m$. Thus $A$ is a nonempty set of positive integers. Hence $A$ has a smallest, which we will call $M$. Because $M \in A$, we have $a < \frac{M}{n}$.
 
@@ -126,10 +126,10 @@ Now suppose $a < 0$. If $b > 0$, then take $c = 0$. If $b \leq 0$, then apply th
 
 
 
-# D Open and Closed Subsets of $R^n$
+# D Open and Closed Subsets of $\mathbb{R}^n$
 
 ### 0.46 Definition: limit
-Suppose $a_1, a_2, ... \in R^n$ and $L \in R^n$. Then $L$ is called a limit of the sequence $a_1, a_2, ...$ and we write 
+Suppose $a_1, a_2, ... \in \mathbb{R}^n$ and $L \in \mathbb{R}^n$. Then $L$ is called a limit of the sequence $a_1, a_2, ...$ and we write 
 
 $$\lim_{k \to \infty} a_k = L$$
 
@@ -141,49 +141,49 @@ for all integers $k \geq m$.
 
 
 ### 0.47 Definition: converge; convergent
-A sequence in $R^n$ is said to converge and to be a convergent sequence if it has a limit.
+A sequence in $\mathbb{R}^n$ is said to converge and to be a convergent sequence if it has a limit.
 
 
 ### 0.49 Definition: open cube
-For $x \in R^n$ and $\delta > 0$, the open cube $B(x, \delta)$ is defined by
+For $x \in \mathbb{R}^n$ and $\delta > 0$, the open cube $B(x, \delta)$ is defined by
 
-$$B(x, \delta) = \\{y \in R^n: \lvert y - x \rvert_\infty < \delta \\} .$$
+$$B(x, \delta) = \\{y \in \mathbb{R}^n: \lvert y - x \rvert_\infty < \delta \\} .$$
 
 
-### 0.52 Definition: open subsets of $R^n$
-- A subset $G$ of $R^n$ is called open if for every $x \in G$, there exists $\delta > 0$ such that $B(x, \delta) \subseteq G$.
+### 0.52 Definition: open subsets of $\mathbb{R}^n$
+- A subset $G$ of $\mathbb{R}^n$ is called open if for every $x \in G$, there exists $\delta > 0$ such that $B(x, \delta) \subseteq G$.
 
-- Equivalently, a subset $G$ of $R^n$ is called open if every element of $G$ is contained in an open cube that is contained in $G$.
+- Equivalently, a subset $G$ of $\mathbb{R}^n$ is called open if every element of $G$ is contained in an open cube that is contained in $G$.
 
 
 ### 0.62 characterization of closed sets
-A subset of $R^n$ is closed if and only if it contains the limit of every convergent sequence of elements of the set.
+A subset of $\mathbb{R}^n$ is closed if and only if it contains the limit of every convergent sequence of elements of the set.
 
 Proof:
 
 We will prove the contrapositive in both directions.
 
 $\Leftarrow$
-First suppose $A$ is a subset of $R^n$ such that some convergent sequence $a_1, a_2, ...$ of elements of $A$ has a limit $L$ that is not in $A$. 
+First suppose $A$ is a subset of $\mathbb{R}^n$ such that some convergent sequence $a_1, a_2, ...$ of elements of $A$ has a limit $L$ that is not in $A$. 
 
 Because $\lim_{k \to \inf} a_k = L$, for each $\delta > 0$ there exists $k \in Z^+$ such that 
 
 $$\lvert L - a_k \rvert_\infty < \delta .$$ 
 
-Thus $L \in R^n \ A$ and 
+Thus $L \in \mathbb{R}^n \ A$ and 
 
-$$B(L, \delta) \nsubseteq R^n \ A$$
+$$B(L, \delta) \nsubseteq \mathbb{R}^n \ A$$
 
 for every $\delta > 0$.
 
-Hence $R^n \ A$ is not an open subset of $R^n$. Thus $A$ is not a closed subset of $R^n$, completing the proof in one direction.
+Hence $\mathbb{R}^n \ A$ is not an open subset of $\mathbb{R}^n$. Thus $A$ is not a closed subset of $\mathbb{R}^n$, completing the proof in one direction.
 
 $\Rightarrow$
-Now suppose $A$ is a subset of $R^n$ that is not closed.
+Now suppose $A$ is a subset of $\mathbb{R}^n$ that is not closed.
 
-Thus $R^n \ A$ is not open. Hence there exists $L \in R^n \ A$ such that 
+Thus $\mathbb{R}^n \ A$ is not open. Hence there exists $L \in \mathbb{R}^n \ A$ such that 
 
-$$B(L, \frac{1}{k}) \nsubseteq R^n \ A$$
+$$B(L, \frac{1}{k}) \nsubseteq \mathbb{R}^n \ A$$
 
 for every $k \in Z^+$. 
 
@@ -195,7 +195,7 @@ The inequality above implies that the sequence $a_1, a_2, ...$ of elements of $A
 
 
 ### 0.63 De Morgan's Laws
-Suppose $\matcal{A}$ is a collection of subsets of some set $X$. Then
+Suppose $\mathcal{A}$ is a collection of subsets of some set $X$. Then
 
 $$X \setminus \bigcup_{E \in \mathcal{A}} E = \bigcap_{E \in \mathcal{A}} (X \ E)$$
 
@@ -211,18 +211,18 @@ An element $x \in X$ is not in $\bigcap_{E \in \mathcal{A}} E$ if and only if $x
 
 
 ### 0.64 union and intersection of closed sets
-- The intersection of every collection of closed subsets of $R^n$ is a closed subset of $R^n$.
-- The union of every finite collection of closed subsets of $R^n$ is a closed subset of $R^n$.
+- The intersection of every collection of closed subsets of $\mathbb{R}^n$ is a closed subset of $\mathbb{R}^n$.
+- The union of every finite collection of closed subsets of $\mathbb{R}^n$ is a closed subset of $\mathbb{R}^n$.
 
 
 ### 0.65 sets that are both open and closed
-The only subsets of $R^n$ that are both open and closed are $\emptyset$ and $R^n$.
+The only subsets of $\mathbb{R}^n$ that are both open and closed are $\emptyset$ and $\mathbb{R}^n$.
 
 Proof:
 
-Suppose $A$ is a subset of $R^n$ that is both open and closed. 
+Suppose $A$ is a subset of $\mathbb{R}^n$ that is both open and closed. 
 
-Suppose towards contradiction that $A \neq \emptyset$ and $A \neq R^n$. Thus there exist $a \in A$ and $b \in R^n \ A$. Let
+Suppose towards contradiction that $A \neq \emptyset$ and $A \neq \mathbb{R}^n$. Thus there exist $a \in A$ and $b \in \mathbb{R}^n \ A$. Let
 
 $$T = \\{t \in [0, 1]: (1 - t) a + tb \in A \\}$$
 
@@ -236,17 +236,17 @@ $$c = (1 - s) a + sb.$$
 
 Suppose $c \in A$. Then $s \neq 1$ (because otherwise $c = b \notin A$). Because $s \in T$ and $A$ is open, $T$ contains numbers slightly larger than $s$, which contradicts the definition of $s$ as an upper bound of $T$.
 
-Suppose $c \in R^n \ A$. Then $s \neq 0$ (because otherwise $c = a \in A$). Because $s \notin T$ and $R^n \ A$ is open, $T$ contains no numbers slightly less than $s$, which contradicts the definition of $s$ as the least upper bound of $T$.
+Suppose $c \in \mathbb{R}^n \ A$. Then $s \neq 0$ (because otherwise $c = a \in A$). Because $s \notin T$ and $\mathbb{R}^n \ A$ is open, $T$ contains no numbers slightly less than $s$, which contradicts the definition of $s$ as the least upper bound of $T$.
 
-Thus we arrive at a contradiction whether $c \in A$ or $c \in R^n \ A$, completing the proof. 
+Thus we arrive at a contradiction whether $c \in A$ or $c \in \mathbb{R}^n \ A$, completing the proof. 
 
 
 
 ## Exercises D
 
-### (1) Suppose $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $R^n$. Prove that $\lim_{k \to \infty} (a_k + c_k) = \lim_{k \to \infty} a_k + \lim_{k \to \infty} c_k$.
+### (1) Suppose $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $\mathbb{R}^n$. Prove that $\lim_{k \to \infty} (a_k + c_k) = \lim_{k \to \infty} a_k + \lim_{k \to \infty} c_k$.
 
-Let $\lim_{k \to \infty} a_k = A$ and $\lim_{k \to \infty} c_k = C$ for some $A, C \in R^n$.
+Let $\lim_{k \to \infty} a_k = A$ and $\lim_{k \to \infty} c_k = C$ for some $A, C \in \mathbb{R}^n$.
 
 Let $\epsilon > 0$. By 0.46, there exists $m_1 \in Z^+$ such that $\lVert a_k - A \rVert_\infty < \epsilon/2$ for all $k \geq m_1$, and there exists $m_2 \in Z^+$ such that $\lVert c_k - C \rVert_\infty < \epsilon/2$ for all $k \geq m_2$.
 
@@ -271,11 +271,11 @@ $$\lim_{k \to \infty} (a_k + c_k) = A + C = \lim_{k \to \infty} a_k + \lim_{k \t
 
 
 
-### (2) Suppose $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $R$. Prove that $\lim_{k \to \infty} (a_k c_k) = (\lim_{k \to \infty} a_k)(\lim_{k \to \infty} c_k)$.
+### (2) Suppose $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $\mathbb{R}$. Prove that $\lim_{k \to \infty} (a_k c_k) = (\lim_{k \to \infty} a_k)(\lim_{k \to \infty} c_k)$.
 
-Let $\lim_{k \to \infty} a_k = A$ and $\lim_{k \to \infty} c_k = C$ for some $A, C \in R$.
+Let $\lim_{k \to \infty} a_k = A$ and $\lim_{k \to \infty} c_k = C$ for some $A, C \in \mathbb{R}$.
 
-First we want to show that since $a_1, a_2, ...$ is a convergent sequence in $R$, it is bounded.
+First we want to show that since $a_1, a_2, ...$ is a convergent sequence in $\mathbb{R}$, it is bounded.
 
 Let $\epsilon = 1$. There exists $m \in Z^+$ such that $|a_k - A| < 1$ for all $k \geq m$. By the triangle inequality, we have
 
@@ -322,7 +322,7 @@ $$\lim_{k \to \infty} (a_k c_k) = AC = (\lim_{k \to \infty} a_k) (\lim_{k \to \i
 
 
 
-### (3) Prove or give a counterexample: If $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $R$ and $c_k \neq 0$ for each $k \in Z^+$, then $\lim_{k \to \infty} a_k / c_k = (\lim_{k \to \infty} a_k) / (\lim_{k \to \infty} c_k)$.
+### (3) Prove or give a counterexample: If $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $\mathbb{R}$ and $c_k \neq 0$ for each $k \in Z^+$, then $\lim_{k \to \infty} a_k / c_k = (\lim_{k \to \infty} a_k) / (\lim_{k \to \infty} c_k)$.
 
 The statement is not true and we provide a counterexample.
 
@@ -334,9 +334,9 @@ Thus the sequence $\frac{a_k}{c_k} = k, k \in Z^+$ is not convergent.
 
 
 
-### (4) Suppose $a \in R$. Prove that there exists a sequence $a_1, a_2, ...$ of rational numbers such that $a = \lim_{k \to \infty} a_k$. 
+### (4) Suppose $a \in \mathbb{R}$. Prove that there exists a sequence $a_1, a_2, ...$ of rational numbers such that $a = \lim_{k \to \infty} a_k$. 
 
-By 0.30, there is a rational number between every two distinct real numbers. Thus there exists $a_k$ such that $a < a_k < a + \frac{1}{k}$, for all $k \in Z^+$, where $a, a + \frac{1}{k} \in R$.
+By 0.30, there is a rational number between every two distinct real numbers. Thus there exists $a_k$ such that $a < a_k < a + \frac{1}{k}$, for all $k \in Z^+$, where $a, a + \frac{1}{k} \in \mathbb{R}$.
 
 Let $\epsilon > 0$. There exists $m \in Z^+$ such that $\frac{1}{m} < \epsilon$ by the Archimedean property. For all $k \geq m$, we have
 
@@ -346,15 +346,15 @@ Hence there exists a sequence of rational numbers $a_1, a_2, ...$ such that $a =
 
 
 
-### (5) Suppose $a \in R$. Prove that there exists a sequence $a_1, a_2, ...$ of irrational numbers such that $a = \lim_{k \to \infty} a_k$.
+### (5) Suppose $a \in \mathbb{R}$. Prove that there exists a sequence $a_1, a_2, ...$ of irrational numbers such that $a = \lim_{k \to \infty} a_k$.
 
 Same argument as (4), invoking 0.39 (there is an irrational number between every two distint real numbers) instead of 0.30.
 
 
 
-### (8) Suppose $G$ is an open subset of $R$. Prove that $\inf G \notin G$ and $\sup G \notin G$.
+### (8) Suppose $G$ is an open subset of $\mathbb{R}$. Prove that $\inf G \notin G$ and $\sup G \notin G$.
 
-If $G$ is empty then $\inf G = \infty$, if $G$ has no lower bound then $\inf G = -\infty$. In either case, $inf G \notin G$ vacuously. Thus suppose $inf G = a$ for some $a \in R$. 
+If $G$ is empty then $\inf G = \infty$, if $G$ has no lower bound then $\inf G = -\infty$. In either case, $inf G \notin G$ vacuously. Thus suppose $inf G = a$ for some $a \in \mathbb{R}$. 
 
 Assume towards contradiction that $a \in G$.
 
@@ -367,13 +367,13 @@ Similarly we conclude $\sup G \notin G$ by the same argument.
 
 ### (9) Suppose $F$ is a nonempty closed set of positive numbers. Prove that $\inf F \in F$.
 
-Since $F$ is nonempty and bounded below by 0, $\inf F \in R$. Let $\inf F = a$.
+Since $F$ is nonempty and bounded below by 0, $\inf F \in \mathbb{R}$. Let $\inf F = a$.
 
-Assume towards contradiction that $a \notin F$. Then $a \in R \setminus F$ where $R \setminus F$ is an open subset of $R$. 
+Assume towards contradiction that $a \notin F$. Then $a \in \mathbb{R} \setminus F$ where $\mathbb{R} \setminus F$ is an open subset of $\mathbb{R}$. 
 
-Since $R \ F$ is open, there exists $\delta > 0$ such that $(a - \delta, a + \delta) \subseteq R \setminus F$. We have 
+Since $\mathbb{R} \ F$ is open, there exists $\delta > 0$ such that $(a - \delta, a + \delta) \subseteq \mathbb{R} \setminus F$. We have 
 
-$$[a, a + \frac{\delta}{2} ] \subset (a - \delta, a + \delta) \subseteq R \setminus F .$$
+$$[a, a + \frac{\delta}{2} ] \subset (a - \delta, a + \delta) \subseteq \mathbb{R} \setminus F .$$
 
 There is no $x \in F$ such that $a \leq x \leq a + \frac{\delta}{2}$. Thus $a + \frac{\delta}{2}$ is a lower bound of $F$. 
 
@@ -386,15 +386,15 @@ Hence we conclude $\inf F \in F$.
 # E Sequences and Continuity
 
 ### 0.68 Definition: bounded
-- A set $A \subseteq R^n$ is called bounded if $\sup \\{\lvert a \rvert_\infty : a \in A \\} < \infty$.
+- A set $A \subseteq \mathbb{R}^n$ is called bounded if $\sup \\{\lvert a \rvert_\infty : a \in A \\} < \infty$.
 
-- A function into $R^n$ is called bounded if its range is a bounded subset of $R^n$.
+- A function into $\mathbb{R}^n$ is called bounded if its range is a bounded subset of $\mathbb{R}^n$.
 
-- As a special case of the previous bullet point, a sequence $a_1, a_2, ...$ of elements of $R^n$ is called bounded if $\sup \\{\lvert a_k \rvert_\infty : k \in Z^+ \\} < \infty$.
+- As a special case of the previous bullet point, a sequence $a_1, a_2, ...$ of elements of $\mathbb{R}^n$ is called bounded if $\sup \\{\lvert a_k \rvert_\infty : k \in Z^+ \\} < \infty$.
 
 
 ### 0.74 characterization of closed bounded sets
-Suppose $F$ is a closed bounded subset of $R^n$. Then every sequence of elements of $F$ has a subsequence that converges to an element of $F$.
+Suppose $F$ is a closed bounded subset of $\mathbb{R}^n$. Then every sequence of elements of $F$ has a subsequence that converges to an element of $F$.
 
 Proof:
 
@@ -408,11 +408,11 @@ Consider a sequence of elements of $F$. Because $F$ is a bounded set, this seque
 
 
 ### 0.79 continuity implies uniform continuity on closed bounded sets
-Every continuous $R^n$-valued function on each closed bounded subset of $R^m$ is uniformly continuous.
+Every continuous $\mathbb{R}^n$-valued function on each closed bounded subset of $\mathbb{R}^m$ is uniformly continuous.
 
 Proof:
 
-Suppose $F$ is a closed bounded subset of $R^m$ and $g: F \to R^n$ is continuous. We want to show that $g$ is uniformly continuous.
+Suppose $F$ is a closed bounded subset of $\mathbb{R}^m$ and $g: F \to \mathbb{R}^n$ is continuous. We want to show that $g$ is uniformly continuous.
 
 Suppose $g$ is not uniformly continuous. Then there exists $\epsilon > 0$ such that for each $k \in Z^+$, there exist $a_k, b_k \in F$ with 
 
@@ -455,9 +455,9 @@ The equation above contradicts the inequality $\lVert g(a_k) - g(b_k) \rVert_\in
 
 # Exercises E
 
-### (1) Prove that every convergent sequence of elements of $R^n$ is bounded.
+### (1) Prove that every convergent sequence of elements of $\mathbb{R}^n$ is bounded.
 
-Suppose $a_1, a_2, ...$ is a convergent sequence in $R^n$. Let $\lim_{k \to \infty} a_k = L$ for some $L \in R^n$. 
+Suppose $a_1, a_2, ...$ is a convergent sequence in $\mathbb{R}^n$. Let $\lim_{k \to \infty} a_k = L$ for some $L \in \mathbb{R}^n$. 
 
 Let $\epsilon = 1$. By 0.46, there exists $m \in Z^+$ such that $\lVert a_k - L \rVert_\infty < 1$ for all $k \geq m$.
 
@@ -491,11 +491,11 @@ and the sequence $a_1, a_2, ...$ is bounded.
 
 
 
-### (2) Prove that a sequence of elements of $R^n$ converges if and only if every subsequence of the sequence converges.
+### (2) Prove that a sequence of elements of $\mathbb{R}^n$ converges if and only if every subsequence of the sequence converges.
 
 $\Rightarrow$
 
-Suppose $a_1, a_2, ...$ is a sequence in $R^n$ that converges. Let $\lim_{k \to \infty} a_k = L$ for some $L \in R^n$. 
+Suppose $a_1, a_2, ...$ is a sequence in $\mathbb{R}^n$ that converges. Let $\lim_{k \to \infty} a_k = L$ for some $L \in \mathbb{R}^n$. 
 
 We want to show that all subsequences of the form $a_{k_1}, a_{k_2}, ...$ where $k_1 < k_2 < ...$ converges to $L$. 
 
@@ -514,7 +514,7 @@ By 0.70, a sequence is a subsequence of itself, if we take $k_i = i$ for each $i
 
 
 
-### (3) Prove the converse of 0.74. Specifically, prove that if $F$ is a subset of $R^n$ with the property that every sequence of elements of $F$ has a subsequence that converges to an element of $F$, then $F$ is closed and bounded.
+### (3) Prove the converse of 0.74. Specifically, prove that if $F$ is a subset of $\mathbb{R}^n$ with the property that every sequence of elements of $F$ has a subsequence that converges to an element of $F$, then $F$ is closed and bounded.
 
 First we want to show that $F$ is bounded. Assume towards contradiction that $F$ is not bounded. 
 
@@ -542,7 +542,7 @@ By 0.62, $F$ is closed.
 
 
 
-### (5) Prove 0.76. Suppose $A \subseteq R^m$ and $f: A \to R^n$ is a function. Suppose $b \in A$. Then $f$ is continuous at $b$ if and only if $\lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ...$ in $A$ such that $\lim_{k \to \infty} b_k = b$. 
+### (5) Prove 0.76. Suppose $A \subseteq \mathbb{R}^m$ and $f: A \to \mathbb{R}^n$ is a function. Suppose $b \in A$. Then $f$ is continuous at $b$ if and only if $\lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ...$ in $A$ such that $\lim_{k \to \infty} b_k = b$. 
 
 $\Rightarrow$
 
@@ -574,7 +574,7 @@ Hence we conclude that $f$ is continuous at $b$.
 
 
 
-### (6) Show that the function $f: (0, \infty) \to R$ defined by $f(x) = \frac{1}{x}$ is not uniformly continuous.
+### (6) Show that the function $f: (0, \infty) \to \mathbb{R}$ defined by $f(x) = \frac{1}{x}$ is not uniformly continuous.
 
 We want to show that $f(x) = \frac{1}{x}$ is not uniformly continuous, i.e., there exists $\epsilon > 0$ such that for all $\delta > 0$, $|f(a) - f(b)| \geq \epsilon$ and $|a-b| < \delta$ for some $a, b \in (0, \infty)$.
 
@@ -593,9 +593,9 @@ Thus for $\epsilon = \frac{1}{2}$, no $\delta > 0$ works.
 Hence we conclude $f(x) = \frac{1}{x}$ is not uniformly continuous.
 
 
-### (7) Suppose $p \in (0, \infty)$. Show that the function $f: R \to R$ defined by $f(x) = |x|^p$ is uniformly continuous if and only $p \in (0, 1]$.
+### (7) Suppose $p \in (0, \infty)$. Show that the function $f: \mathbb{R} \to \mathbb{R}$ defined by $f(x) = |x|^p$ is uniformly continuous if and only $p \in (0, 1]$.
 
-First we want to show that $f(x) = |x|^p$ is not uniformly continuous when $p > 1$. There exists $\epsilon > 0$ such that, for all $\delta > 0$, we have $|b-a| < \delta$ but $|f(b) - f(a)| \geq \epsilon$ for some $a, b \in R$.
+First we want to show that $f(x) = |x|^p$ is not uniformly continuous when $p > 1$. There exists $\epsilon > 0$ such that, for all $\delta > 0$, we have $|b-a| < \delta$ but $|f(b) - f(a)| \geq \epsilon$ for some $a, b \in \mathbb{R}$.
 
 Let $\epsilon = frac{p}{2}$.
 
@@ -630,7 +630,7 @@ $$|f(b) - f(a)| \geq p > \frac{p}{2} .$$
 
 Hence we conclude that $f(x) = |x|^p$ is not uniformly continuous when $p > 1$.
 
-Now we want to show that $f(x) = |x|^p$ is uniformly continuous when $p \in (0, 1]$. For every $\epsilon > 0$, there exists $\delta > 0$ such that $|f(a) - f(b)| < \epsilon$ for all $a, b \in R$ with $|a-b| < \delta$.
+Now we want to show that $f(x) = |x|^p$ is uniformly continuous when $p \in (0, 1]$. For every $\epsilon > 0$, there exists $\delta > 0$ such that $|f(a) - f(b)| < \epsilon$ for all $a, b \in \mathbb{R}$ with $|a-b| < \delta$.
 
 Before we prove the claim, we will prove this lemma needed in the proof: For $p \in (0, 1]$ and $s, t \geq 0$, $(s+t)^p \leq s^p + t^p$.
 
@@ -646,7 +646,7 @@ Multiplying $(s+t)^p$ to both sides, we obtain the desired inequality:
 
 $$s^p + t^p \geq (s+t)^p.$$
 
-Now we are going to prove the claim. Let $\epsilon > 0$. Let $\delta = \epsilon^{1/p}$. Let $x, y \in R$ with $|x-y| < \delta$. 
+Now we are going to prove the claim. Let $\epsilon > 0$. Let $\delta = \epsilon^{1/p}$. Let $x, y \in \mathbb{R}$ with $|x-y| < \delta$. 
 
 By the triangle inequality, we have
 
@@ -676,43 +676,43 @@ Hence we conclude that $f(x) = |x|^p$ is uniformly continuous when $p \in (0, 1]
 
 
 
-### (8) Prove or give a counterexample: If $f: R \to R$ is a bounded continuous function, then $f$ is uniformly continuous.
+### (8) Prove or give a counterexample: If $f: \mathbb{R} \to \mathbb{R}$ is a bounded continuous function, then $f$ is uniformly continuous.
 
 
-### (9) Prove or give a counterexample: If $f: (0, 1) \to R$ is a bounded continuous function, then $f$ is uniformly continuous.
+### (9) Prove or give a counterexample: If $f: (0, 1) \to \mathbb{R}$ is a bounded continuous function, then $f$ is uniformly continuous.
 
 
-### (13) Prove or give a counterexample: If $f: R^m \to R^n$ is continuous and $\lVert f(x) \rVert < \frac{1}{\lVert x \rVert}$ for all $x \in R^m$ with $\lVert x \rVert > 1$, then $f$ is uniformly continuous.
+### (13) Prove or give a counterexample: If $f: \mathbb{R}^m \to \mathbb{R}^n$ is continuous and $\lVert f(x) \rVert < \frac{1}{\lVert x \rVert}$ for all $x \in \mathbb{R}^m$ with $\lVert x \rVert > 1$, then $f$ is uniformly continuous.
 
 
-### (14) Prove or give a counterexample: The sum of two uniformly continuous functions from $R^m$ to $R^n$ is uniformly continuous.
-
-
-
-### (15) Prove or give a counterexample: The product of two uniformly continuous functions from $R$ to $R$ is uniformly continuous.
+### (14) Prove or give a counterexample: The sum of two uniformly continuous functions from $\mathbb{R}^m$ to $\mathbb{R}^n$ is uniformly continuous.
 
 
 
-### (16) Prove or a give a counterexample: If $f: R \to (0, \infty)$ is uniformly continuous, then the function $\frac{1}{f}$ is uniformly continuous on $R$.
+### (15) Prove or give a counterexample: The product of two uniformly continuous functions from $\mathbb{R}$ to $\mathbb{R}$ is uniformly continuous.
 
 
 
-### (17) Prove or give a counterexample: If $f, g: R \to R$ are uniformly continuous functions, then the composition $f \circ g: R \to R$ is uniformly continuous.
+### (16) Prove or a give a counterexample: If $f: \mathbb{R} \to (0, \infty)$ is uniformly continuous, then the function $\frac{1}{f}$ is uniformly continuous on $\mathbb{R}$.
 
 
-### (18) Suppose $h: R^m \to R^n$ is a function. Prove that $h$ is continuous if and only if $h^{-1} (G)$ is an open subset of $R^m$ for every open subset of $G$ of $R^n$.
+
+### (17) Prove or give a counterexample: If $f, g: \mathbb{R} \to \mathbb{R}$ are uniformly continuous functions, then the composition $f \circ g: \mathbb{R} \to \mathbb{R}$ is uniformly continuous.
 
 
-### (19) Suppose $h: R^m \to R^n$ is a function. Prove that $h$ is continuous if and only if $h^{-1} (F)$ is a closed subset of $R^m$ for every closed subset $F$ of $R^n$.
+### (18) Suppose $h: \mathbb{R}^m \to \mathbb{R}^n$ is a function. Prove that $h$ is continuous if and only if $h^{-1} (G)$ is an open subset of $\mathbb{R}^m$ for every open subset of $G$ of $\mathbb{R}^n$.
 
 
-### (32) Prove that every convergent sequence of elements of $R^n$ is a Cauchy sequence.
+### (19) Suppose $h: \mathbb{R}^m \to \mathbb{R}^n$ is a function. Prove that $h$ is continuous if and only if $h^{-1} (F)$ is a closed subset of $\mathbb{R}^m$ for every closed subset $F$ of $\mathbb{R}^n$.
+
+
+### (32) Prove that every convergent sequence of elements of $\mathbb{R}^n$ is a Cauchy sequence.
 
 
 ### (33) 
-#### (a) Prove that every Cauchy sequence of elements of $R^n$ is bounded.
+#### (a) Prove that every Cauchy sequence of elements of $\mathbb{R}^n$ is bounded.
 
-#### (b) Prove that if some subseqeunce of a Cauchy sequence of elements of $R^n$ converges to some $L \in R^n$, then the Cauchy sequence has limit $L$.
+#### (b) Prove that if some subseqeunce of a Cauchy sequence of elements of $\mathbb{R}^n$ converges to some $L \in \mathbb{R}^n$, then the Cauchy sequence has limit $L$.
 
-#### (c) Prove that every Cauchy sequence of elements of $R^n$ converges.
+#### (c) Prove that every Cauchy sequence of elements of $\mathbb{R}^n$ converges.
 
