@@ -37,8 +37,8 @@ We have now shown that both $m$ and $n$ are even, contradicting our choice of $m
 This contradiction means our original assumption that there is a rational number whose square equals 2 was incorrect, completing the proof.
 
 
-### 0.18 Example $\\{a \in Q: a^2 < 2\\}$ does not have a least upper bound in Q
-Suppose $b \in Q$. We want to show that $b$ is not a least upper bound of $A = \\{a \in Q: a^2 < 2\\}$. 
+### 0.18 Example $\\{a \in \mathbb{Q}: a^2 < 2\\}$ does not have a least upper bound in \mathbb{Q}
+Suppose $b \in \mathbb{Q}$. We want to show that $b$ is not a least upper bound of $A = \\{a \in \mathbb{Q}: a^2 < 2\\}$. 
 
 We know from 0.12 that $b^2 \neq 2$. Thus $b^2 < 2$ or $b^2 > 2$.
 
@@ -77,7 +77,7 @@ $$
 
 Thus $b$ is not a least upper bound of $A$. 
 
-This completes the explanation of why $\\{a \in Q: a^2 < 2\\}$ does not have a least upper bound in $Q$.
+This completes the explanation of why $\\{a \in \mathbb{Q}: a^2 < 2\\}$ does not have a least upper bound in $\mathbb{Q}$.
 
 
 ### 0.19 Definition: complete ordered field
@@ -107,7 +107,7 @@ $$\frac{1}{n} < b - a .$$
 
 Let 
 
-$$A = \left\\{m \in Z: a < \frac{m}{n} \right\\} .$$
+$$A = \left\\{m \in \mathbb{Z}: a < \frac{m}{n} \right\\} .$$
 
 By the Archimedean property (0.28), there is a positive integer $m$ such that $an < m$. Thus $A$ is a nonempty set of positive integers. Hence $A$ has a smallest, which we will call $M$. Because $M \in A$, we have $a < \frac{M}{n}$.
 
@@ -133,7 +133,7 @@ Suppose $a_1, a_2, ... \in \mathbb{R}^n$ and $L \in \mathbb{R}^n$. Then $L$ is c
 
 $$\lim_{k \to \infty} a_k = L$$
 
-if for every $\epsilon > 0$, there exists $m \in Z^+$ such that 
+if for every $\epsilon > 0$, there exists $m \in \mathbb{Z}^+$ such that 
 
 $$\lvert a_k - L \rvert_\infty < \epsilon$$
 
@@ -166,7 +166,7 @@ We will prove the contrapositive in both directions.
 $\Leftarrow$
 First suppose $A$ is a subset of $\mathbb{R}^n$ such that some convergent sequence $a_1, a_2, ...$ of elements of $A$ has a limit $L$ that is not in $A$. 
 
-Because $\lim_{k \to \inf} a_k = L$, for each $\delta > 0$ there exists $k \in Z^+$ such that 
+Because $\lim_{k \to \inf} a_k = L$, for each $\delta > 0$ there exists $k \in \mathbb{Z}^+$ such that 
 
 $$\lvert L - a_k \rvert_\infty < \delta .$$ 
 
@@ -185,9 +185,9 @@ Thus $\mathbb{R}^n \ A$ is not open. Hence there exists $L \in \mathbb{R}^n \ A$
 
 $$B(L, \frac{1}{k}) \nsubseteq \mathbb{R}^n \ A$$
 
-for every $k \in Z^+$. 
+for every $k \in \mathbb{Z}^+$. 
 
-Thus for each $k \in Z^+$, there exists $a_k \in A$ such that 
+Thus for each $k \in \mathbb{Z}^+$, there exists $a_k \in A$ such that 
 
 $$\lvert L - a_k \rvert_\infty < \frac{1}{k} .$$
 
@@ -197,11 +197,11 @@ The inequality above implies that the sequence $a_1, a_2, ...$ of elements of $A
 ### 0.63 De Morgan's Laws
 Suppose $\mathcal{A}$ is a collection of subsets of some set $X$. Then
 
-$$X \setminus \bigcup_{E \in \mathcal{A}} E = \bigcap_{E \in \mathcal{A}} (X \ E)$$
+$$X \setminus \bigcup_{E \in \mathcal{A}} E = \bigcap_{E \in \mathcal{A}} (X \setminus E)$$
 
 and
 
-$$X \setminus \bigcap_{E \in \mathcal{A}} E = \bigcup_{E \in \mathcal{A}} (X \ E) .$$
+$$X \setminus \bigcap_{E \in \mathcal{A}} E = \bigcup_{E \in \mathcal{A}} (X \setminus E) .$$
 
 Proof:
 
@@ -248,7 +248,7 @@ Thus we arrive at a contradiction whether $c \in A$ or $c \in \mathbb{R}^n \ A$,
 
 Let $\lim_{k \to \infty} a_k = A$ and $\lim_{k \to \infty} c_k = C$ for some $A, C \in \mathbb{R}^n$.
 
-Let $\epsilon > 0$. By 0.46, there exists $m_1 \in Z^+$ such that $\lVert a_k - A \rVert_\infty < \epsilon/2$ for all $k \geq m_1$, and there exists $m_2 \in Z^+$ such that $\lVert c_k - C \rVert_\infty < \epsilon/2$ for all $k \geq m_2$.
+Let $\epsilon > 0$. By 0.46, there exists $m_1 \in \mathbb{Z}^+$ such that $\lVert a_k - A \rVert_\infty < \epsilon/2$ for all $k \geq m_1$, and there exists $m_2 \in \mathbb{Z}^+$ such that $\lVert c_k - C \rVert_\infty < \epsilon/2$ for all $k \geq m_2$.
 
 Let $M = max(m_1, m_2)$. Then we have $\lVert a_k - A \rVert_\infty < \epsilon/2$ for all $k \geq M \geq m_1$ and $\lVert c_k - C \rVert_\infty < \epsilon/2$ for all $k \geq M \geq m_2$.
 
@@ -277,7 +277,7 @@ Let $\lim_{k \to \infty} a_k = A$ and $\lim_{k \to \infty} c_k = C$ for some $A,
 
 First we want to show that since $a_1, a_2, ...$ is a convergent sequence in $\mathbb{R}$, it is bounded.
 
-Let $\epsilon = 1$. There exists $m \in Z^+$ such that $|a_k - A| < 1$ for all $k \geq m$. By the triangle inequality, we have
+Let $\epsilon = 1$. There exists $m \in \mathbb{Z}^+$ such that $|a_k - A| < 1$ for all $k \geq m$. By the triangle inequality, we have
 
 $$|a_k| \leq |a_k - A| + |A| < 1 + |A|$$
 
@@ -285,7 +285,7 @@ for all $k \geq m$.
 
 Let $N = max \\{|a_1|, |a_2|, ..., |a_{m-1}|, 1 + |A|\\}$. Then for each $k < m$, $|a_k| \leq N$. For each $k \geq m$, $|a_k| < 1 + |A| \leq N$. 
 
-Thus $|a_k| \leq N < \infty$ for all $k \in Z^+$, and the sequence is bounded.
+Thus $|a_k| \leq N < \infty$ for all $k \in \mathbb{Z}^+$, and the sequence is bounded.
 
 Now we want to show that $a_k c_k$ converges to $AC$.
 
@@ -302,7 +302,7 @@ $$
 \end{aligned}
 $$
 
-Let $\epsilon > 0$. There exists $m_1 \in Z^+$ such that $|a_k - A| < \frac{\epsilon}{2(|C|+1)}$ for all $k \geq m_1$. There exists $m_2 \in Z^+$ such that $|c_k - C| < \frac{\epsilon}{2(N+1)}$ for all $k \geq m_2$. 
+Let $\epsilon > 0$. There exists $m_1 \in \mathbb{Z}^+$ such that $|a_k - A| < \frac{\epsilon}{2(|C|+1)}$ for all $k \geq m_1$. There exists $m_2 \in \mathbb{Z}^+$ such that $|c_k - C| < \frac{\epsilon}{2(N+1)}$ for all $k \geq m_2$. 
 
 Let $M = max \\{m_1, m_2\\}$. Then for all $k \geq M$, 
 
@@ -322,23 +322,23 @@ $$\lim_{k \to \infty} (a_k c_k) = AC = (\lim_{k \to \infty} a_k) (\lim_{k \to \i
 
 
 
-### (3) Prove or give a counterexample: If $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $\mathbb{R}$ and $c_k \neq 0$ for each $k \in Z^+$, then $\lim_{k \to \infty} a_k / c_k = (\lim_{k \to \infty} a_k) / (\lim_{k \to \infty} c_k)$.
+### (3) Prove or give a counterexample: If $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $\mathbb{R}$ and $c_k \neq 0$ for each $k \in \mathbb{Z}^+$, then $\lim_{k \to \infty} a_k / c_k = (\lim_{k \to \infty} a_k) / (\lim_{k \to \infty} c_k)$.
 
 The statement is not true and we provide a counterexample.
 
-Suppose $a_k = 1, k \in Z^+$ and $c_k = \frac{1}{k}, k \in Z^+$.
+Suppose $a_k = 1, k \in \mathbb{Z}^+$ and $c_k = \frac{1}{k}, k \in \mathbb{Z}^+$.
 
 Then we can see that $\lim_{k \to \infty} a_k = 1$ and $\lim_{k \to \infty} c_k = 0$. 
 
-Thus the sequence $\frac{a_k}{c_k} = k, k \in Z^+$ is not convergent. 
+Thus the sequence $\frac{a_k}{c_k} = k, k \in \mathbb{Z}^+$ is not convergent. 
 
 
 
 ### (4) Suppose $a \in \mathbb{R}$. Prove that there exists a sequence $a_1, a_2, ...$ of rational numbers such that $a = \lim_{k \to \infty} a_k$. 
 
-By 0.30, there is a rational number between every two distinct real numbers. Thus there exists $a_k$ such that $a < a_k < a + \frac{1}{k}$, for all $k \in Z^+$, where $a, a + \frac{1}{k} \in \mathbb{R}$.
+By 0.30, there is a rational number between every two distinct real numbers. Thus there exists $a_k$ such that $a < a_k < a + \frac{1}{k}$, for all $k \in \mathbb{Z}^+$, where $a, a + \frac{1}{k} \in \mathbb{R}$.
 
-Let $\epsilon > 0$. There exists $m \in Z^+$ such that $\frac{1}{m} < \epsilon$ by the Archimedean property. For all $k \geq m$, we have
+Let $\epsilon > 0$. There exists $m \in \mathbb{Z}^+$ such that $\frac{1}{m} < \epsilon$ by the Archimedean property. For all $k \geq m$, we have
 
 $$|a - a_k| < \frac{1}{k} \leq \frac{1}{m} < \epsilon$$
 
@@ -390,7 +390,7 @@ Hence we conclude $\inf F \in F$.
 
 - A function into $\mathbb{R}^n$ is called bounded if its range is a bounded subset of $\mathbb{R}^n$.
 
-- As a special case of the previous bullet point, a sequence $a_1, a_2, ...$ of elements of $\mathbb{R}^n$ is called bounded if $\sup \\{\lvert a_k \rvert_\infty : k \in Z^+ \\} < \infty$.
+- As a special case of the previous bullet point, a sequence $a_1, a_2, ...$ of elements of $\mathbb{R}^n$ is called bounded if $\sup \\{\lvert a_k \rvert_\infty : k \in \mathbb{Z}^+ \\} < \infty$.
 
 
 ### 0.74 characterization of closed bounded sets
@@ -414,7 +414,7 @@ Proof:
 
 Suppose $F$ is a closed bounded subset of $\mathbb{R}^m$ and $g: F \to \mathbb{R}^n$ is continuous. We want to show that $g$ is uniformly continuous.
 
-Suppose $g$ is not uniformly continuous. Then there exists $\epsilon > 0$ such that for each $k \in Z^+$, there exist $a_k, b_k \in F$ with 
+Suppose $g$ is not uniformly continuous. Then there exists $\epsilon > 0$ such that for each $k \in \mathbb{Z}^+$, there exist $a_k, b_k \in F$ with 
 
 $$\lVert a_k - b_k \rVert_\infty < \frac{1}{k}$$
 
@@ -449,7 +449,7 @@ Thus
 
 $$\lim_{j \to \infty} (g(a_{k_j}) - g(b_{k_j})) = 0. $$
 
-The equation above contradicts the inequality $\lVert g(a_k) - g(b_k) \rVert_\infty \geq \epsilon$, which holds for all $k \in Z^+$. This contradiction means that our assumption that $g$ is not uniformly continuous is false, completing the proof.
+The equation above contradicts the inequality $\lVert g(a_k) - g(b_k) \rVert_\infty \geq \epsilon$, which holds for all $k \in \mathbb{Z}^+$. This contradiction means that our assumption that $g$ is not uniformly continuous is false, completing the proof.
 
 
 
@@ -459,7 +459,7 @@ The equation above contradicts the inequality $\lVert g(a_k) - g(b_k) \rVert_\in
 
 Suppose $a_1, a_2, ...$ is a convergent sequence in $\mathbb{R}^n$. Let $\lim_{k \to \infty} a_k = L$ for some $L \in \mathbb{R}^n$. 
 
-Let $\epsilon = 1$. By 0.46, there exists $m \in Z^+$ such that $\lVert a_k - L \rVert_\infty < 1$ for all $k \geq m$.
+Let $\epsilon = 1$. By 0.46, there exists $m \in \mathbb{Z}^+$ such that $\lVert a_k - L \rVert_\infty < 1$ for all $k \geq m$.
 
 By the triangle inequality, we have for all $k \geq m$
 
@@ -479,13 +479,13 @@ and for $k \in \\{1, ..., m-1\\}$,
 
 $$\lVert a_k \rVert_\infty \leq M .$$
 
-Thus for all $k \in Z^+$, 
+Thus for all $k \in \mathbb{Z}^+$, 
 
 $$\lVert a_k \rVert_\infty \leq M .$$
 
 Hence we conclude 
 
-$$\sup \\{\lVert a_k \rVert_\infty: k \in Z^+ \\} \leq M < \infty$$ 
+$$\sup \\{\lVert a_k \rVert_\infty: k \in \mathbb{Z}^+ \\} \leq M < \infty$$ 
 
 and the sequence $a_1, a_2, ...$ is bounded.
 
@@ -499,9 +499,9 @@ Suppose $a_1, a_2, ...$ is a sequence in $\mathbb{R}^n$ that converges. Let $\li
 
 We want to show that all subsequences of the form $a_{k_1}, a_{k_2}, ...$ where $k_1 < k_2 < ...$ converges to $L$. 
 
-Suppose $\epsilon > 0$. There exists $m \in Z^+$ such that $\lVert a_k - L \rVert_\infty < \epsilon$ for all $k \geq m$. 
+Suppose $\epsilon > 0$. There exists $m \in \mathbb{Z}^+$ such that $\lVert a_k - L \rVert_\infty < \epsilon$ for all $k \geq m$. 
 
-Since $k_1 < k_2 < ...$ are positive integers, $k_i \geq i$ for each $i \in Z^+$. So if $i \geq m$, then $k_i \geq m$.
+Since $k_1 < k_2 < ...$ are positive integers, $k_i \geq i$ for each $i \in \mathbb{Z}^+$. So if $i \geq m$, then $k_i \geq m$.
 
 Thus $\lVert a_{k_i} - L \rVert_\infty < \epsilon$ for all $k_i \geq m$. 
 
@@ -510,7 +510,7 @@ Hence we conclude every subsequence of the sequence $a_1, a_2, ...$ converges to
 $\Leftarrow$
 Suppose every subsequence of the sequence converges.
 
-By 0.70, a sequence is a subsequence of itself, if we take $k_i = i$ for each $i \in Z^+$. Thus if every subsequence of the sequence converges, then the sequence converges.
+By 0.70, a sequence is a subsequence of itself, if we take $k_i = i$ for each $i \in \mathbb{Z}^+$. Thus if every subsequence of the sequence converges, then the sequence converges.
 
 
 
@@ -520,11 +520,11 @@ First we want to show that $F$ is bounded. Assume towards contradiction that $F$
 
 Then $\sup \\{ \lVert a \rVert_\infty: a \in F \\} = \infty$. 
 
-For every $k \in Z^+$, we can find an element $a_k \in F$ such that $\lVert a_k \rVert_\infty > k$, so the sequence is not bounded.
+For every $k \in \mathbb{Z}^+$, we can find an element $a_k \in F$ such that $\lVert a_k \rVert_\infty > k$, so the sequence is not bounded.
 
 By hypothesis, $a_1, a_2, ...$ has a subsequence $a_{k_1}, a_{k_2}, ...$ that converges to an element of $F$, which we call $L$. Every convergent sequence is bounded (by Exercise 1). 
 
-Since $k_i \geq i$ for each $i \in Z^+$, we have $\lVert a_{k_i} \rVert_\infty > k_i \geq i$ for every $i \in Z^+$. Thus the subsequence is unbounded, which is a contradiction. 
+Since $k_i \geq i$ for each $i \in \mathbb{Z}^+$, we have $\lVert a_{k_i} \rVert_\infty > k_i \geq i$ for every $i \in \mathbb{Z}^+$. Thus the subsequence is unbounded, which is a contradiction. 
 
 Hence we conclude that $F$ is bounded.
 
@@ -532,9 +532,9 @@ Next we want to show that $F$ is closed.
 
 Suppose $a_1, a_2, ...$ is a convergent sequence in $F$ with limit $M$. By hypothesis, it has a convergent subsequence $a_{k_1}, a_{k_2}, ...$ which converges to $L \in F$. 
 
-Let $\epsilon > 0$. There exists $m \in Z^+$ such that $\lVert a_k - M \rVert_\infty < \epsilon$ for all $k \geq m$. 
+Let $\epsilon > 0$. There exists $m \in \mathbb{Z}^+$ such that $\lVert a_k - M \rVert_\infty < \epsilon$ for all $k \geq m$. 
 
-Since $k_i >= i$ for each $i \in Z^+$, for all $i \geq m$, we have $\lVert a_{k_i} - M \rVert_\infty < \epsilon$ for all $k_i \geq i \geq m$. Thus $\lim_{k_i \to \infty} a_{k_i} = M$.
+Since $k_i >= i$ for each $i \in \mathbb{Z}^+$, for all $i \geq m$, we have $\lVert a_{k_i} - M \rVert_\infty < \epsilon$ for all $k_i \geq i \geq m$. Thus $\lim_{k_i \to \infty} a_{k_i} = M$.
 
 Since $a_{k_1}, a_{k_2}, ...$ converges to $L$, by the uniqueness of limit, $L = M$ and $M \in F$. 
 
@@ -550,7 +550,7 @@ Suppose $f$ is continuous at $b$. We want to show that $\lim_{k \to \infty} f(b_
 
 Let $b_1, b_2, ...$ be a sequence in $A$ such that $\lim_{k \to \infty} b_k = b$.
 
-Let $\epsilon > 0$. There exists $\delta > 0$ such that $\lVert f(a) - f(b) \rVert_\infty < \epsilon$ for all $a \in A$ with $\lVert a - b \rVert_\infty < \delta$. There exists $M \in Z^+$ such that $\lVert b_k - b \rVert_\infty < \delta$ for all $k \geq M$. 
+Let $\epsilon > 0$. There exists $\delta > 0$ such that $\lVert f(a) - f(b) \rVert_\infty < \epsilon$ for all $a \in A$ with $\lVert a - b \rVert_\infty < \delta$. There exists $M \in \mathbb{Z}^+$ such that $\lVert b_k - b \rVert_\infty < \delta$ for all $k \geq M$. 
 
 Thus for all $k \geq M$, $\lVert f(b_k) - f(b) \rVert_\infty < \epsilon$. 
 
@@ -564,11 +564,11 @@ Assume towards contradiction that $f$ is not continuous at $b$.
 
 Then there exists some $\epsilon > 0$ such that, for all $\delta > 0$, there is some $a \in A$ such that $\lVert a - b \rVert_\infty < \delta$ but $\lVert f(a) - f(b) \rVert_\infty \geq \epsilon$.
 
-In particular, for each $k \in Z^+$, taking $\delta = \frac{1}{k}$ gives $\lVert a_k - b \rVert_\infty < \frac{1}{k}$ and $\lVert f(a_k) - f(b) \rVert_\infty \geq \epsilon$.
+In particular, for each $k \in \mathbb{Z}^+$, taking $\delta = \frac{1}{k}$ gives $\lVert a_k - b \rVert_\infty < \frac{1}{k}$ and $\lVert f(a_k) - f(b) \rVert_\infty \geq \epsilon$.
 
 We can see that $\lim_{k \to \infty} a_k = b$. 
 
-By hypothesis, $\lim_{k \to \infty} f(a_k) = f(b)$. There exists $N \in Z^+$ such that $\lVert f(a_N) - f(b) \rVert_\infty < \epsilon$. We have arrivded at a contradiction.
+By hypothesis, $\lim_{k \to \infty} f(a_k) = f(b)$. There exists $N \in \mathbb{Z}^+$ such that $\lVert f(a_N) - f(b) \rVert_\infty < \epsilon$. We have arrivded at a contradiction.
 
 Hence we conclude that $f$ is continuous at $b$.
 
@@ -578,7 +578,7 @@ Hence we conclude that $f$ is continuous at $b$.
 
 We want to show that $f(x) = \frac{1}{x}$ is not uniformly continuous, i.e., there exists $\epsilon > 0$ such that for all $\delta > 0$, $|f(a) - f(b)| \geq \epsilon$ and $|a-b| < \delta$ for some $a, b \in (0, \infty)$.
 
-Let $\epsilon = \frac{1}{2}$. Let $\delta > 0$. By the Archimedean property, choose $k \in Z^+$ such that $\frac{1}{k} < \delta$. 
+Let $\epsilon = \frac{1}{2}$. Let $\delta > 0$. By the Archimedean property, choose $k \in \mathbb{Z}^+$ such that $\frac{1}{k} < \delta$. 
 
 Let $a = \frac{1}{k+1}$ and $b = \frac{1}{k}$, $a, b \in (0, \infty)$. Then
 
@@ -599,7 +599,7 @@ First we want to show that $f(x) = |x|^p$ is not uniformly continuous when $p > 
 
 Let $\epsilon = frac{p}{2}$.
 
-Let $\delta > 0$. Take $n \in Z^+$ such that $n^{1-p} < \delta$. This is doable because $p > 1$, so $n^{1-p} \to 0$ as $n \to \infty$.
+Let $\delta > 0$. Take $n \in \mathbb{Z}^+$ such that $n^{1-p} < \delta$. This is doable because $p > 1$, so $n^{1-p} \to 0$ as $n \to \infty$.
 
 Consider $a = n$ and $b = n + n^{1-p}$. Since 
 
