@@ -14,7 +14,7 @@ Proof:
 
 Suppose there exist integers $m$ and $n$ such that 
 
-$$(\frac{m}{n})^2 = 2 .$$
+$$\left( \frac{m}{n} \right)^2 = 2 .$$
 
 By canceling common factors, we can choose $m$ and $n$ to have no common integer factors greater than 1. In other words, we can assume that $\frac{m}{n}$ is a fraction in reduced form.
 
@@ -53,7 +53,7 @@ $$
 (b + \delta)^2 
     &= b^2 + \delta^2 + 2b \delta \\
     &= b^2 + (2b + \delta) \delta \\
-    &< b^2 + 5 \delta
+    &< b^2 + 5 \delta \\
     &= 2
 \end{aligned}
 $$
@@ -107,7 +107,7 @@ $$\frac{1}{n} < b - a .$$
 
 Let 
 
-$$A = \\{m \in Z: a < \frac{m}{n} \\} .$$
+$$A = \left\{m \in Z: a < \frac{m}{n} \right\} .$$
 
 By the Archimedean property (0.28), there is a positive integer $m$ such that $an < m$. Thus $A$ is a nonempty set of positive integers. Hence $A$ has a smallest, which we will call $M$. Because $M \in A$, we have $a < \frac{M}{n}$.
 
@@ -131,11 +131,11 @@ Now suppose $a < 0$. If $b > 0$, then take $c = 0$. If $b \leq 0$, then apply th
 ### 0.46 Definition: limit
 Suppose $a_1, a_2, ... \in R^n$ and $L \in R^n$. Then $L$ is called a limit of the sequence $a_1, a_2, ...$ and we write 
 
-$$lim_{k \rightarrow \infty} a_k = L$$
+$$\lim_{k \to \infty} a_k = L$$
 
 if for every $\epsilon > 0$, there exists $m \in Z^+$ such that 
 
-$$\lvert a_k - L \rvert_infty < \epsilon$$
+$$\lvert a_k - L \rvert_\infty < \epsilon$$
 
 for all integers $k \geq m$.
 
@@ -166,13 +166,13 @@ We will prove the contrapositive in both directions.
 $\Leftarrow$
 First suppose $A$ is a subset of $R^n$ such that some convergent sequence $a_1, a_2, ...$ of elements of $A$ has a limit $L$ that is not in $A$. 
 
-Because $lim_{k \rightarrow \inf} a_k = L$, for each $\delta > 0$ there exists $k \in Z^+$ such that 
+Because $\lim_{k \to \inf} a_k = L$, for each $\delta > 0$ there exists $k \in Z^+$ such that 
 
 $$\lvert L - a_k \rvert_\infty < \delta .$$ 
 
 Thus $L \in R^n \ A$ and 
 
-$$B(L, \delta) \notsubseteq R^n \ A$$
+$$B(L, \delta) \nsubseteq R^n \ A$$
 
 for every $\delta > 0$.
 
@@ -183,7 +183,7 @@ Now suppose $A$ is a subset of $R^n$ that is not closed.
 
 Thus $R^n \ A$ is not open. Hence there exists $L \in R^n \ A$ such that 
 
-$$B(L, \frac{1}{k}) \notsubseteq R^n \ A$$
+$$B(L, \frac{1}{k}) \nsubseteq R^n \ A$$
 
 for every $k \in Z^+$. 
 
@@ -197,17 +197,17 @@ The inequality above implies that the sequence $a_1, a_2, ...$ of elements of $A
 ### 0.63 De Morgan's Laws
 Suppose $\matcal{A}$ is a collection of subsets of some set $X$. Then
 
-$$X \ \cup_{E \in \mathcal{A}} E = \cap_{E \in \mathcal{A}} (X \ E)$$
+$$X \setminus \bigcup_{E \in \mathcal{A}} E = \bigcap_{E \in \mathcal{A}} (X \ E)$$
 
 and
 
-$$X \ \cap_{E \in \mathcal{A}} E = \cup_{E \in \mathcal{A}} (X \ E) .$$
+$$X \setminus \bigcap_{E \in \mathcal{A}} E = \bigcup_{E \in \mathcal{A}} (X \ E) .$$
 
 Proof:
 
-An element $x \in X$ is not in $\cup_{E \in \mathcal{A}} E$ if and only if $x$ is not in $E$ for every $E \in \mathcal{A}$. Thus the first equality above holds.
+An element $x \in X$ is not in $\bigcup_{E \in \mathcal{A}} E$ if and only if $x$ is not in $E$ for every $E \in \mathcal{A}$. Thus the first equality above holds.
 
-An element $x \in X$ is not in $\cap_{E \in \mathcal{A}} E$ if and only if $x$ is not in $E$ for some $E \in \mathcal{A}$. Thus the second equality holds.
+An element $x \in X$ is not in $\bigcap_{E \in \mathcal{A}} E$ if and only if $x$ is not in $E$ for some $E \in \mathcal{A}$. Thus the second equality holds.
 
 
 ### 0.64 union and intersection of closed sets
@@ -228,7 +228,7 @@ $$T = \\{t \in [0, 1]: (1 - t) a + tb \in A \\}$$
 
 and let
 
-$$s = sup T.$$
+$$s = \sup T.$$
 
 The set $T$ is nonempty because $0 \in T$; thus $s \in [0, 1]$. Let 
 
@@ -244,9 +244,9 @@ Thus we arrive at a contradiction whether $c \in A$ or $c \in R^n \ A$, completi
 
 ## Exercises D
 
-### (1) Suppose $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $R^n$. Prove that $lim_{k \to \infty} (a_k + c_k) = lim_{k \to \infty} a_k + lim_{k \to \infty} c_k$.
+### (1) Suppose $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $R^n$. Prove that $\lim_{k \to \infty} (a_k + c_k) = \lim_{k \to \infty} a_k + \lim_{k \to \infty} c_k$.
 
-Let $lim_{k \to \infty} a_k = A$ and $lim_{k \to \infty} c_k = C$ for some $A, C \in R^n$.
+Let $\lim_{k \to \infty} a_k = A$ and $\lim_{k \to \infty} c_k = C$ for some $A, C \in R^n$.
 
 Let $\epsilon > 0$. By 0.46, there exists $m_1 \in Z^+$ such that $\lVert a_k - A \rVert_\infty < \epsilon/2$ for all $k \geq m_1$, and there exists $m_2 \in Z^+$ such that $\lVert c_k - C \rVert_\infty < \epsilon/2$ for all $k \geq m_2$.
 
@@ -267,13 +267,13 @@ Thus for all $k \geq M$, $\lVert (a_k + c_k) - (A + C) \rVert_\infty < \epsilon$
 
 Hence we conclude 
 
-$$lim_{k \to \infty} (a_k + c_k) = A + C = lim_{k \to \infty} a_k + lim_{k \to \infty} c_k$$
+$$\lim_{k \to \infty} (a_k + c_k) = A + C = \lim_{k \to \infty} a_k + \lim_{k \to \infty} c_k$$
 
 
 
-### (2) Suppose $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $R$. Prove that $lim_{k \to \infty} (a_k c_k) = (lim_{k \to \infty} a_k)(lim_{k \to \infty} c_k)$.
+### (2) Suppose $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $R$. Prove that $\lim_{k \to \infty} (a_k c_k) = (\lim_{k \to \infty} a_k)(\lim_{k \to \infty} c_k)$.
 
-Let $lim_{k \to \infty} a_k = A$ and $lim_{k \to \infty} c_k = C$ for some $A, C \in R$.
+Let $\lim_{k \to \infty} a_k = A$ and $\lim_{k \to \infty} c_k = C$ for some $A, C \in R$.
 
 First we want to show that since $a_1, a_2, ...$ is a convergent sequence in $R$, it is bounded.
 
@@ -318,23 +318,23 @@ $$
 
 Thus $a_k c_k$ converges to $AC$. Hence we conclude 
 
-$$lim_{k \to \infty} (a_k c_k) = AC = (lim_{k \to \infty} a_k) (lim_{k \to \infty} c_k) .$$
+$$\lim_{k \to \infty} (a_k c_k) = AC = (\lim_{k \to \infty} a_k) (\lim_{k \to \infty} c_k) .$$
 
 
 
-### (3) Prove or give a counterexample: If $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $R$ and $c_k \neq 0$ for each $k \in Z^+$, then $lim_{k \to \infty} a_k / c_k = (lim_{k \to \infty} a_k) / (lim_{k \to \infty} c_k)$.
+### (3) Prove or give a counterexample: If $a_1, a_2, ...$ and $c_1, c_2, ...$ are convergent sequences in $R$ and $c_k \neq 0$ for each $k \in Z^+$, then $\lim_{k \to \infty} a_k / c_k = (\lim_{k \to \infty} a_k) / (\lim_{k \to \infty} c_k)$.
 
 The statement is not true and we provide a counterexample.
 
 Suppose $a_k = 1, k \in Z^+$ and $c_k = \frac{1}{k}, k \in Z^+$.
 
-Then we can see that $lim_{k \to \infty} a_k = 1$ and $lim_{k \to \infty} c_k = 0$. 
+Then we can see that $\lim_{k \to \infty} a_k = 1$ and $\lim_{k \to \infty} c_k = 0$. 
 
 Thus the sequence $\frac{a_k}{c_k} = k, k \in Z^+$ is not convergent. 
 
 
 
-### (4) Suppose $a \in R$. Prove that there exists a sequence $a_1, a_2, ...$ of rational numbers such that $a = lim_{k \to \infty} a_k$. 
+### (4) Suppose $a \in R$. Prove that there exists a sequence $a_1, a_2, ...$ of rational numbers such that $a = \lim_{k \to \infty} a_k$. 
 
 By 0.30, there is a rational number between every two distinct real numbers. Thus there exists $a_k$ such that $a < a_k < a + \frac{1}{k}$, for all $k \in Z^+$, where $a, a + \frac{1}{k} \in R$.
 
@@ -342,11 +342,11 @@ Let $\epsilon > 0$. There exists $m \in Z^+$ such that $\frac{1}{m} < \epsilon$ 
 
 $$|a - a_k| < \frac{1}{k} \leq \frac{1}{m} < \epsilon$$
 
-Hence there exists a sequence of rational numbers $a_1, a_2, ...$ such that $a = lim_{k \to \infty} a_k$.
+Hence there exists a sequence of rational numbers $a_1, a_2, ...$ such that $a = \lim_{k \to \infty} a_k$.
 
 
 
-### (5) Suppose $a \in R$. Prove that there exists a sequence $a_1, a_2, ...$ of irrational numbers such that $a = lim_{k \to \infty} a_k$.
+### (5) Suppose $a \in R$. Prove that there exists a sequence $a_1, a_2, ...$ of irrational numbers such that $a = \lim_{k \to \infty} a_k$.
 
 Same argument as (4), invoking 0.39 (there is an irrational number between every two distint real numbers) instead of 0.30.
 
@@ -412,15 +412,15 @@ Every continuous $R^n$-valued function on each closed bounded subset of $R^m$ is
 
 Proof:
 
-Suppose $F$ is a closed bounded subset of $R^m$ and $g: F \rightarrow R^n$ is continuous. We want to show that $g$ is uniformly continuous.
+Suppose $F$ is a closed bounded subset of $R^m$ and $g: F \to R^n$ is continuous. We want to show that $g$ is uniformly continuous.
 
 Suppose $g$ is not uniformly continuous. Then there exists $\epsilon > 0$ such that for each $k \in Z^+$, there exist $a_k, b_k \in F$ with 
 
-$$\lvert a_k - b_k \rvert_\infty < \farc{1}{k}$$
+$$\lVert a_k - b_k \rVert_\infty < \frac{1}{k}$$
 
 and
 
-$$\lvert g(a_k) - g(b_k) \rvert_\infty \geq \epsilon.$$
+$$\lVert g(a_k) - g(b_k) \rVert_\infty \geq \epsilon.$$
 
 Because $F$ is bounded, the sequence $a_1, a_2, ...$ is bounded. Thus by the Bolzano-Weierstrass Theorem (0.73), some subsequence $a_{k_1}, a_{k_2}, ...$ converges to some limit $a$. Because $F$ is closed, we have $a \in F$ by 0.62.
 
@@ -428,28 +428,28 @@ Now
 
 $$
 \begin{aligned}
-\lvert a - b_{k_j} \rvert_\infty
-    &= \lvert (a - a_{k_j}) + (a_{k_j} - b_{k_j}) \rvert_\infty \\
-    &\leq \lvert a - a_{k_j} \rvert_\inf + \lvert a_{k_j} - b_{k_j} \rvert_\infty \\
-    &< \lvert a - a_{k_j} \rvert_\infty + \frac{1}{k_j}
+\lVert a - b_{k_j} \rVert_\infty
+    &= \lVert (a - a_{k_j}) + (a_{k_j} - b_{k_j}) \rVert_\infty \\
+    &\leq \lVert a - a_{k_j} \rVert_\inf + \lVert a_{k_j} - b_{k_j} \rVert_\infty \\
+    &< \lVert a - a_{k_j} \rVert_\infty + \frac{1}{k_j}
 \end{aligned}
 $$
 
-which implies that $lim_{j \rightarrow \infty} b_{k_j} = a$.
+which implies that $\lim_{j \to \infty} b_{k_j} = a$.
 
-Because $g$ is continuous at $a$ and $lim_{j \rightarrow \infty} a_{k_j} = a$ and $lim_{j \rightarrow \infty} b_{k_j} = a$, we conclude that
+Because $g$ is continuous at $a$ and $\lim_{j \to \infty} a_{k_j} = a$ and $\lim_{j \to \infty} b_{k_j} = a$, we conclude that
 
-$$lim_{j \rightarrow \infty} g(a_{k_j}) = g(a)$$
+$$\lim_{j \to \infty} g(a_{k_j}) = g(a)$$
 
 and
 
-$$lim_{j \rightarrow \infty} g(b_{k_j}) = g(a) .$$
+$$\lim_{j \to \infty} g(b_{k_j}) = g(a) .$$
 
 Thus 
 
-$$lim_{j \rightarrow \infty} (g(a_{k_j}) - g(b_{k_j})) = 0. $$
+$$\lim_{j \to \infty} (g(a_{k_j}) - g(b_{k_j})) = 0. $$
 
-The equation above contradicts the inequality $\lvert g(a_k) - g(b_k) \rvert_\infty \geq \epsilon$, which holds for all $k \in Z^+$. This contradiction means that our assumption that $g$ is not uniformly continuous is false, completing the proof.
+The equation above contradicts the inequality $\lVert g(a_k) - g(b_k) \rVert_\infty \geq \epsilon$, which holds for all $k \in Z^+$. This contradiction means that our assumption that $g$ is not uniformly continuous is false, completing the proof.
 
 
 
@@ -457,7 +457,7 @@ The equation above contradicts the inequality $\lvert g(a_k) - g(b_k) \rvert_\in
 
 ### (1) Prove that every convergent sequence of elements of $R^n$ is bounded.
 
-Suppose $a_1, a_2, ...$ is a convergent sequence in $R^n$. Let $lim_{k \to \infty} a_k = L$ for some $L \in R^n$. 
+Suppose $a_1, a_2, ...$ is a convergent sequence in $R^n$. Let $\lim_{k \to \infty} a_k = L$ for some $L \in R^n$. 
 
 Let $\epsilon = 1$. By 0.46, there exists $m \in Z^+$ such that $\lVert a_k - L \rVert_\infty < 1$ for all $k \geq m$.
 
@@ -495,7 +495,7 @@ and the sequence $a_1, a_2, ...$ is bounded.
 
 $\Rightarrow$
 
-Suppose $a_1, a_2, ...$ is a sequence in $R^n$ that converges. Let $lim_{k \to \infty} a_k = L$ for some $L \in R^n$. 
+Suppose $a_1, a_2, ...$ is a sequence in $R^n$ that converges. Let $\lim_{k \to \infty} a_k = L$ for some $L \in R^n$. 
 
 We want to show that all subsequences of the form $a_{k_1}, a_{k_2}, ...$ where $k_1 < k_2 < ...$ converges to $L$. 
 
@@ -534,7 +534,7 @@ Suppose $a_1, a_2, ...$ is a convergent sequence in $F$ with limit $M$. By hypot
 
 Let $\epsilon > 0$. There exists $m \in Z^+$ such that $\lVert a_k - M \rVert_\infty < \epsilon$ for all $k \geq m$. 
 
-Since $k_i >= i$ for each $i \in Z^+$, for all $i \geq m$, we have $\lVert a_{k_i} - M \rVert_\infty < \epsilon$ for all $k_i \geq i \geq m$. Thus $lim_{k_i \to \infty} a_{k_i} = M$.
+Since $k_i >= i$ for each $i \in Z^+$, for all $i \geq m$, we have $\lVert a_{k_i} - M \rVert_\infty < \epsilon$ for all $k_i \geq i \geq m$. Thus $\lim_{k_i \to \infty} a_{k_i} = M$.
 
 Since $a_{k_1}, a_{k_2}, ...$ converges to $L$, by the uniqueness of limit, $L = M$ and $M \in F$. 
 
@@ -542,23 +542,23 @@ By 0.62, $F$ is closed.
 
 
 
-### (5) Prove 0.76. Suppose $A \subseteq R^m$ and $f: A \to R^n$ is a function. Suppose $b \in A$. Then $f$ is continuous at $b$ if and only if $lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ...$ in $A$ such that $lim_{k \to \infty} b_k = b$. 
+### (5) Prove 0.76. Suppose $A \subseteq R^m$ and $f: A \to R^n$ is a function. Suppose $b \in A$. Then $f$ is continuous at $b$ if and only if $\lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ...$ in $A$ such that $\lim_{k \to \infty} b_k = b$. 
 
 $\Rightarrow$
 
-Suppose $f$ is continuous at $b$. We want to show that $lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ... \in A$ where $lim_{k \to \infty} b_k = b$.
+Suppose $f$ is continuous at $b$. We want to show that $\lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ... \in A$ where $\lim_{k \to \infty} b_k = b$.
 
-Let $b_1, b_2, ...$ be a sequence in $A$ such that $lim_{k \to \infty} b_k = b$.
+Let $b_1, b_2, ...$ be a sequence in $A$ such that $\lim_{k \to \infty} b_k = b$.
 
 Let $\epsilon > 0$. There exists $\delta > 0$ such that $\lVert f(a) - f(b) \rVert_\infty < \epsilon$ for all $a \in A$ with $\lVert a - b \rVert_\infty < \delta$. There exists $M \in Z^+$ such that $\lVert b_k - b \rVert_\infty < \delta$ for all $k \geq M$. 
 
 Thus for all $k \geq M$, $\lVert f(b_k) - f(b) \rVert_\infty < \epsilon$. 
 
-Hence we conclude that $lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ...$ in $A$ such that $lim_{k \to \infty} b_k = b$.
+Hence we conclude that $\lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ...$ in $A$ such that $\lim_{k \to \infty} b_k = b$.
 
 $\Leftarrow$
 
-Suppose $lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ...$ in $A$ where $lim_{k \to \infty} b_k = b$. 
+Suppose $\lim_{k \to \infty} f(b_k) = f(b)$ for every sequence $b_1, b_2, ...$ in $A$ where $\lim_{k \to \infty} b_k = b$. 
 
 Assume towards contradiction that $f$ is not continuous at $b$.
 
@@ -566,9 +566,9 @@ Then there exists some $\epsilon > 0$ such that, for all $\delta > 0$, there is 
 
 In particular, for each $k \in Z^+$, taking $\delta = \frac{1}{k}$ gives $\lVert a_k - b \rVert_\infty < \frac{1}{k}$ and $\lVert f(a_k) - f(b) \rVert_\infty \geq \epsilon$.
 
-We can see that $lim_{k \to \infty} a_k = b$. 
+We can see that $\lim_{k \to \infty} a_k = b$. 
 
-By hypothesis, $lim_{k \to \infty} f(a_k) = f(b)$. There exists $N \in Z^+$ such that $\lVert f(a_N) - f(b) \rVert_\infty < \epsilon$. We have arrivded at a contradiction.
+By hypothesis, $\lim_{k \to \infty} f(a_k) = f(b)$. There exists $N \in Z^+$ such that $\lVert f(a_N) - f(b) \rVert_\infty < \epsilon$. We have arrivded at a contradiction.
 
 Hence we conclude that $f$ is continuous at $b$.
 
@@ -668,7 +668,7 @@ $$
     &\leq |x-y|^p \\
     &< \delta^p \\
     &= (\epsilon^{1/p})^p \\
-    &< \epsilon
+    &= \epsilon
 \end{aligned}
 $$
 
