@@ -37,7 +37,7 @@ We have now shown that both $m$ and $n$ are even, contradicting our choice of $m
 This contradiction means our original assumption that there is a rational number whose square equals 2 was incorrect, completing the proof.
 
 
-### 0.18 Example $\\{a \in \mathbb{Q}: a^2 < 2\\}$ does not have a least upper bound in \mathbb{Q}
+### 0.18 Example $\\{a \in \mathbb{Q}: a^2 < 2\\}$ does not have a least upper bound in $\mathbb{Q}$
 Suppose $b \in \mathbb{Q}$. We want to show that $b$ is not a least upper bound of $A = \\{a \in \mathbb{Q}: a^2 < 2\\}$. 
 
 We know from 0.12 that $b^2 \neq 2$. Thus $b^2 < 2$ or $b^2 > 2$.
@@ -168,7 +168,7 @@ First suppose $A$ is a subset of $\mathbb{R}^n$ such that some convergent sequen
 
 Because $\lim_{k \to \inf} a_k = L$, for each $\delta > 0$ there exists $k \in \mathbb{Z}^+$ such that 
 
-$$\lvert L - a_k \rvert_\infty < \delta .$$ 
+$$\lVert L - a_k \rVert_\infty < \delta .$$ 
 
 Thus $L \in \mathbb{R}^n \ A$ and 
 
@@ -181,15 +181,15 @@ Hence $\mathbb{R}^n \ A$ is not an open subset of $\mathbb{R}^n$. Thus $A$ is no
 $\Rightarrow$
 Now suppose $A$ is a subset of $\mathbb{R}^n$ that is not closed.
 
-Thus $\mathbb{R}^n \ A$ is not open. Hence there exists $L \in \mathbb{R}^n \ A$ such that 
+Thus $\mathbb{R}^n \setminus A$ is not open. Hence there exists $L \in \mathbb{R}^n \setminus A$ such that 
 
-$$B(L, \frac{1}{k}) \nsubseteq \mathbb{R}^n \ A$$
+$$B(L, \frac{1}{k}) \nsubseteq \mathbb{R}^n \setminus A$$
 
 for every $k \in \mathbb{Z}^+$. 
 
 Thus for each $k \in \mathbb{Z}^+$, there exists $a_k \in A$ such that 
 
-$$\lvert L - a_k \rvert_\infty < \frac{1}{k} .$$
+$$\lVert L - a_k \rVert_\infty < \frac{1}{k} .$$
 
 The inequality above implies that the sequence $a_1, a_2, ...$ of elements of $A$ has limit $L$. Thus there exists a convergent sequence of elements of $A$ whose limit is not in $A$, completing the proof in the other direction.
 
