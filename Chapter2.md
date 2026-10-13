@@ -24,10 +24,13 @@ $$
 ### 2.2 Definition: outer measure
 The outer measure $|A|$ of a set $A \subset \mathbb{R}$ is defined by
 
-$$|A| = 
-\text{
-    inf $\{\sum_{k=1}^\infty l(I_k): I_1, I_2, ...$ are open intervals such that $A \subset \cup_{k=1}^\infty I_k$ \} 
-    }
+$$
+|A| = \inf
+    \left\\{
+        \sum_{k=1}^\infty l(I_k): 
+            I_1, I_2, ... \text{ are open intervals such that } 
+            A \subset \bigcup_{k=1}^\infty I_k
+    \right\\} 
 $$
 
 
@@ -52,7 +55,7 @@ Suppose $t \in \mathbb{R}$ and $a \in \mathbb{R}$. Then $|t + A| = |A| .$
 ### 2.8 countable subadditivity of outer measure
 Suppose $A_1, A_2, ...$ is a sequence of subsets of $\mathbb{R}$. Then
 
-$$|\cup_{k=1}^\infty A_k| \leq \sum_{k=1}^\infty |A_k| .$$
+$$|\bigcup_{k=1}^\infty A_k| \leq \sum_{k=1}^\infty |A_k| .$$
 
 
 ### 2.10 Definition: open cover
@@ -72,7 +75,7 @@ Suppose $F$ is a closed bounded subset of $\mathbb{R}$ and $C$ is an open cover 
 
 First consider the case where $F = [a, b]$ for some $a, b \in \mathbb{R}$ with $a < b$. Thus $C$ is an open cover of $[a, b]$. Let
 
-$$D = \\{d \in [a, b]: [a, d] has a finite subcover from C \\} .$$
+$$D = \\{d \in [a, b]: [a, d] \text{ has a finite subcover from } C \\} .$$
 
 
 
@@ -183,8 +186,9 @@ Suppose $E$ is a subset of a set $X$. The characteristic function of $E$ is the 
 $$
 \chi_E(x) =
 \begin{cases}
-1 & \text{ if } x \in E \\
-0 & \text{ if } x \notin E
+    1 & \text{ if } x \in E \\
+    0 & \text{ if } x \notin E
+\end{cases}
 $$
 
 
@@ -198,7 +202,7 @@ Suppose $(X, \mathcal{S})$ is a measurable space and $f: X \to \mathbb{R}$ is a 
 
 $$f^{-1}((a, \infty)) \in \mathcal{S}$$
 
-for all $a \in mathbb{R}$. Then $f$ is an $\mathcal{S}$-measurable function.
+for all $a \in \mathbb{R}$. Then $f$ is an $\mathcal{S}$-measurable function.
 
 Proof:
 
@@ -218,7 +222,7 @@ by 2.33(a), and thus $R \setminus A \in \mathcal{T}$. In other words, $\mathcal{
 
 If $A_1, A_2, ... \in \mathcal{T}$, then $f^{-1}(A_1), f^{-1}(A_2), ... \in \mathcal{S}$; hence
 
-$$f^{-1}(\bigcup_{k=1}^\infty A_k) = \bigcup_{k=1}^\infty f^{-1}(A_k) \in \mathcal{S}$$
+$$f^{-1} \left(\bigcup_{k=1}^\infty A_k \right) = \bigcup_{k=1}^\infty f^{-1}(A_k) \in \mathcal{S}$$
 
 by 2.33(b), and thus $\cup_{k=1}^\infty A_k \in \mathcal{T}$. In other words, $\mathcal{T}$ is closed under countable unions. 
 
@@ -228,11 +232,11 @@ By hypothesis, $\mathcal{T}$ contains $\\{(a, \infty): a \in \mathbb{R} \\} .$ B
 
 Because
 
-$$(a, b) = \bigcup_{k=1}^\infty (a, b - \frac{1}{k}]$$
+$$(a, b) = \bigcup_{k=1}^\infty \left(a, b - \frac{1}{k} \right]$$
 
 and
 
-$$(-\infty, b) = \bigcup_{k=1}^\infty (-k, b - \frac{1}{k}]$$
+$$(-\infty, b) = \bigcup_{k=1}^\infty \left(-k, b - \frac{1}{k} \right]$$
 
 and $\mathcal{T}$ is closed under countable unions, we can conclude that $\mathcal{T}$ contains every open subset of $\mathbb{R}$.
 
@@ -314,7 +318,7 @@ Proof:
 
 Suppose $a \in \mathbb{R}$. We will show that
 
-$$(2.47) (f+g)^{-1}((a, \infty)) = \bigcup_{r \in \mathbb{Q}} \left( f^{-1}((r, \infty)) \bigcap g^{-1}((a - r, \infty)) \right)$$
+$$(2.47) \quad (f+g)^{-1}((a, \infty)) = \bigcup_{r \in \mathbb{Q}} \left( f^{-1}((r, \infty)) \bigcap g^{-1}((a - r, \infty)) \right)$$
 
 which implies that $(f+g)^{-1}((a, \infty)) \in \mathcal{S}$.
 
@@ -373,7 +377,12 @@ Proof:
 
 Suppose $a \in \mathbb{R}$. We will show that 
 
-$$(2.49)  f^{-1}((a, \infty)) = \bigcup_{j=1}^\infty \bigcup_{m=1}^\infty \bigcap_{k=m}^\infty f_k^{-1}((a + \frac{1}{j}, \infty))$$
+$$
+(2.49) \quad 
+f^{-1}((a, \infty)) = 
+    \bigcup_{j=1}^\infty \bigcup_{m=1}^\infty \bigcap_{k=m}^\infty f_k^{-1} 
+        \left((a + \frac{1}{j}, \infty) \right)
+$$
 
 which implies that $f^{-1}((a, \infty)) \in \mathcal{S}$.
 
@@ -381,11 +390,18 @@ First suppose $x \in f^{-1}((a, \infty))$. Thus there exists $j \in \mathbb{Z}^+
 
 The definition of limit now implies that there exists $m \in \mathbb{Z}^+$ such that $f_k(x) > a + \frac{1}{j}$ for all $k \geq m$. Thus x is in the right side of 2.49, and
 
-$$f^{-1}((a, \infty)) \subseteq \bigcup_{j=1}^\infty \bigcup_{m=1}^\infty \bigcap_{k=m}^\infty f_k^{-1}((a + \frac{1}{j}, \infty))$$
+$$
+f^{-1}((a, \infty)) \subseteq 
+    \bigcup_{j=1}^\infty \bigcup_{m=1}^\infty \bigcap_{k=m}^\infty 
+        f_k^{-1} \left((a + \frac{1}{j}, \infty) \right)
+$$
 
 To prove the inclusion in the other direction, suppose 
 
-$$x \in \bigcup_{j=1}^\infty \bigcup_{m=1}^\infty \bigcap_{k=m}^\infty f_k^{-1}((a + \frac{1}{j}, \infty)) .$$
+$$
+x \in \bigcup_{j=1}^\infty \bigcup_{m=1}^\infty \bigcap_{k=m}^\infty 
+    f_k^{-1} \left((a + \frac{1}{j}, \infty) \right)
+$$
 
 Thus there exist $j, m \in \mathbb{Z}^+$ such that $f_k(x) > a + \frac{1}{j}$ for all $k \geq m$. 
 
@@ -486,29 +502,76 @@ Suppose $X$ is a set, $f_1, f_2$, ... is a sequence of functions from $X$ to $\m
 
 - The sequence $f_1, f_2$, ... converges pointwise on $X$ to $f$ if
 
-$$lim_{k \to \infty} f_k (x) = f(x)$$
+$$\lim_{k \to \infty} f_k (x) = f(x)$$
 
 for each $x \in X$.
 
-In other words, $f_1, f_2$, ... converges pointwise on $X$ to $f$ if for each $x \in X$ and every $\epsilon > 0$, there exists $n \in Z^+$ such that $|f_k(x) - f(x)| < \epsilon$ for all integers $k \geq n$.
+In other words, $f_1, f_2$, ... converges pointwise on $X$ to $f$ if for each $x \in X$ and every $\epsilon > 0$, there exists $n \in \mathbb{Z}^+$ such that $|f_k(x) - f(x)| < \epsilon$ for all integers $k \geq n$.
 
-- The sequence $f_1, f_2$ ... converges uniformly on $X$ to $f$ if for every $\epsilon > 0$, there exists $n \in Z^+$ such that $|f_k(x) - f(x)| < \epsilon$ for all integers $k \geq n$ and all $x \in X$.
+- The sequence $f_1, f_2$ ... converges uniformly on $X$ to $f$ if for every $\epsilon > 0$, there exists $n \in \mathbb{Z}^+$ such that $|f_k(x) - f(x)| < \epsilon$ for all integers $k \geq n$ and all $x \in X$.
 
 
-### 2.84
+### 2.84 uniform limit of continuous functions is continuous
+Suppose $B \subset \mathbb{R}$ and $f_1, f_2, ...$ is a sequence of functions from $B$ to $\mathbb{R}$ that converges uniformly on $B$ to a function $f: B \to \mathbb{R}$. Supopse $b \in B$ and $f_k$ is continuous at $b$ for each $k \in \mathbb{Z}^+$. Then $f$ is continuous at $b$.
+
+Proof:
+
+
+### 2.85 Egorov's Theorem
+Suppose $(X, \mathcal{S}, \mu)$ is a measure space with $\mu(X) < \infty$. Suppose $f_1, f_2, ...$ is a sequence of $\mathcal{S}$-measurable functions from $X$ to $\mathbb{R}$ that converges pointwise on $X$ to a function $f: X \to \mathbb{R}$. Then for every $\epsilon > 0$, there exists a set $E \in \mathcal{S}$ such that $\mu(X \setminus E) < \epsilon$ and $f_1, f_2, ...$ converges uniformly to $f$ on $E$.
+
+Proof:
 
 
 ### 2.88 Definition: simple function
 A function is called simple if it takes on only finitely many values.
 
+Suppose $(X, \mathcal{S})$ is a measurable space, $f: X \to \mathbb{R}$ is a simple function, and $c_1, ..., c_n$ are the distinct nonzero values of $f$. Then
+
+$$f = c_1 \chi_{E_1} + ... + c_n \chi_{E_n} $$
+
+where $E_k = f^{-1}(\\{c_k\\})$. Thus this function $f$ is an $\mathcal{S}$-measurable function if and only if $E_1, ..., E_n \in \mathcal{S}$.
+
 
 ### 2.89 approximation by simple functions
-Suppose $(X, \mathcal{S})$ is a measure space and $f: X \rightarrow [-\infty, \infty]$ is $\mathcal{S}$-measurable. Then there exists a sequence $f_1, f_2, ...$ of functions from $X$ to $\mathbb{R}$ such that
+Suppose $(X, \mathcal{S})$ is a measure space and $f: X \to [-\infty, \infty]$ is $\mathcal{S}$-measurable. Then there exists a sequence $f_1, f_2, ...$ of functions from $X$ to $\mathbb{R}$ such that
 
 (a) each $f_k$ is a simple $\mathcal{S}$-measurable function;
 
-(b) $|f_k(x)| \leq |f_{k+1}(x)| \leq |f(x)|$ for all $k \in Z^+$ and all $x \in X$;
+(b) $|f_k(x)| \leq |f_{k+1}(x)| \leq |f(x)|$ for all $k \in \mathbb{Z}^+$ and all $x \in X$;
 
 (c) $lim_{k \to \infty} f_k(x) = f(x)$ for every $x \in X$;
 
 (d) $f_1, f_2, ...$ converges uniformly on $X$ to $f$ if $f$ is bounded.
+
+Proof:
+
+The idea of the proof is that for each $k \in \mathbb{Z}^+$ and $n \in \mathbb{Z}$, the interval $[n, n+1)$ is divided into $2^k$ equally sized half-open subintervals. 
+
+If $f(x) \in [0, k)$, we define $f_k(x)$ to be the left endpoint of the subinterval into which $f(x)$ falls; if $f(x) \in (-k, 0)$, we define $f_k(x)$ to be the right endpoint of the subinterval into which $f(x)$ falls; and if $|f(x)| \geq k$, we define $f_k(x)$ to be $\plusminus k$. Specifically, let
+
+$$
+f_k(x) =
+\begin{cases}
+    \frac{m}{2^k} & \text{ if } 0 \leq f(x) < k \text{ and } m \in mathbb{Z} \text{ is such that } f(x) \in [\frac{m}{2^k}, \frac{m+1}{2^k}) \\
+    \frac{m+1}{2^k} & \text{ if } -k < f(x) < 0 \text{ and } m \in mathbb{Z} \text{ is such that } f(x) \in [\frac{m}{2^k}, \frac{m+1}{2^k}) \\
+    k & \text{ if } f(x) \geq k \\
+    -k & \text{ if } f(x) \leq -k
+\end{cases}
+$$
+
+Each 
+
+$$f^{-1}([\frac{m}{2^k}, \frac{m+1}{2^k})) \in \mathcal{S}$$
+
+because $f$ is an $\mathcal{S}$-measurable function. Thus each $f_k$ is an $\mathcal{S}$-measurable simple function; in other words, (a) holds.
+
+Also, (b) holds because of how we have defined $f_k$.
+
+The definition of $f_k$ implies that 
+
+$$(2.90) |f_k(x) - f(x)| \leq \frac{1}{2^k} \forall x \in X \text{ such that } f(x) \in [-k, k]$$
+
+Thus we see that (c) holds.
+
+Finally 2.90 shows that (d) holds.
