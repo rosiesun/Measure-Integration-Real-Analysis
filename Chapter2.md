@@ -7,16 +7,18 @@ Rosie Sun <br>
 
 # 2A Outer Measure on \mathbb{R}
 
+## Motivation and Definition of Outer Measure
+
 ### 2.1 Definition: length of open interval
 The length $l(I)$ of an open interval $I$ is defined by
 
 $$
 l(I) =
 \begin{cases}
-b - a & \text{if $I = (a, b)$ for some $a, b \in \mathbb{R}$ with $a < b$} \\
-0 & \text{if $I = \emptyset$} \\
-\infty & \text{if $I = (-\infty, a)$ or $I = (a, \infty)$ for some $a \in \mathbb{R}$} \\
-\infty & \text{if $I = (-\infty, \infty)$}
+    b - a & \text{ if } I = (a, b) \text{ for some } a, b \in \mathbb{R} \text{ with } a < b \\
+    0 & \text{ if } I = \emptyset \\
+    \infty & \text{ if } I = (-\infty, a) \text{ or } I = (a, \infty) \text{ for some } a \in \mathbb{R}} \\
+    \infty & \text{ if } I = (-\infty, \infty)
 \end{cases}
 $$
 
@@ -32,6 +34,30 @@ $$
             A \subset \bigcup_{k=1}^\infty I_k
     \right\\} 
 $$
+
+
+The definition of outer measure involves an infinite sum. The infinite sum $\sum_{k=t}^\infty t_k$ of a sequence $t_1, t_2, ...$ of elements of $[0, \infty]$ is defined to be $\infty$ if some $t_k = \infty$. Otherwise, $\sum_{k=1}^\infty t_k$ is defined to be the limit (possibly $\infty$) of the increasing sequence $t_1, t_1 + t_2, t_1 + t_2 + t_3, ...$ of partial sums; thus
+
+$$\sum_{k=1}^\infty t_k = \lim_{n \to \infty} \sum_{k=1}^n t_k$$
+
+
+### 2.3 Example finite sets have outer measure 0
+Suppose $A = \\{a_1, ..., a_n\\}$ is a finite set of real numbers. Suppose $\epsilon > 0$. Define a sequence $I_1, I_2, ...$ of open intervals by
+
+$$
+I_k = 
+\begin{cases}
+    (a_k - \epsilon, a_k + \epsilon) & \text{ if } k \leq n \\
+    \emptyset & \text{ if } k > n
+\end{cases}
+$$
+
+Then $I_1, I_2, ...$ is a sequence of open intervals whose union contains $A$. Clearly 
+
+$$\sum_{k=1}^\infty l(I_k) = 2 \epsilon n$$
+
+Hence $|A| \leq 2 \epsilon n$. Because $\epsilon$ is an arbitrary positive number, this implies that $|A| = 0$.
+
 
 
 ### 2.4 countable sets have outer measure 0
@@ -575,3 +601,15 @@ $$(2.90) |f_k(x) - f(x)| \leq \frac{1}{2^k} \forall x \in X \text{ such that } f
 Thus we see that (c) holds.
 
 Finally 2.90 shows that (d) holds.
+
+
+
+### 2.91 Luzin's Theorem
+Suppose $g: \mathbb{R} \to \mathbb{R}$ is a Borel measurable function. Then for every $\epsilon > 0$, there exists a closed set $F \subset \mathbb{R}$ such that $|R \setminus F| < \epsilon$ and $g|_F$ is a continuous function on $F$.
+
+Proof:
+
+
+
+### 2.93 Luzin's Theorem, second version
+Suppose $E \subset \mathbb{R}$ and $g: E \to \mathbb{R}$ is a Borel measurable function. Then for every $\epsilon > 0$, there exists a closed set $F \subset E$ and a continuous function $h: \mathbb{R} \to \mathbb{R}$ such that $|E \setminus F| < \epsilon$ and $h|_F = g|_F$.
