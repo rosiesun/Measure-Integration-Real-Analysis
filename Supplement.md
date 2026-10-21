@@ -700,7 +700,38 @@ Hence we conclude that $f(x) = |x|^p$ is uniformly continuous when $p \in (0, 1]
 ### (17) Prove or give a counterexample: If $f, g: \mathbb{R} \to \mathbb{R}$ are uniformly continuous functions, then the composition $f \circ g: \mathbb{R} \to \mathbb{R}$ is uniformly continuous.
 
 
-### (18) Suppose $h: \mathbb{R}^m \to \mathbb{R}^n$ is a function. Prove that $h$ is continuous if and only if $h^{-1} (G)$ is an open subset of $\mathbb{R}^m$ for every open subset of $G$ of $\mathbb{R}^n$.
+### (18) Suppose $h: \mathbb{R}^m \to \mathbb{R}^n$ is a function. Prove that $h$ is continuous if and only if $h^{-1} (G)$ is an open subset of $\mathbb{R}^m$ for every open subset $G$ of $\mathbb{R}^n$.
+
+$\Rightarrow$
+Suppose $h$ is continuous. 
+
+We want to show that for every open subset $G \subseteq \mathbb{R}^n$, $h^{-1}(G) \subseteq \mathbb{R}^m$ is open. Let $b \in h^{-1}(G)$. We want to show that there exists $\delta > 0$ such that $B(b, \delta) \subseteq h^{-1}(G)$.
+
+By definition $h(b) \in G$. Since $G$ is open, there exists $\epsilon > 0$ such that $B(h(b), \epsilon) \subseteq G$. 
+
+Since $h$ is continuous at $b$, there exists $\delta > 0$ such that for all $a \in \mathbb{R}^m$ with $\lVert b - a \rVert_\infty < \delta$, we have $\lVert h(b) - h(a) \rVert_\infty < \epsilon$. 
+
+Let $a \in B(b, \delta)$ be arbitrary. Then $h(a) \in B(h(b), \epsilon) \subseteq G$.
+
+Hence $a \in h^{-1}(G)$. 
+
+Since $a$ is arbitrary, we conclude that that $B(b, \delta) \subseteq h^{-1}(G)$. 
+
+$\Leftarrow$
+Suppose $h^{-1} (G)$ is an open subset of $\mathbb{R}^m$ for every open subset $G$ of $\mathbb{R}^n$.
+
+We want to show that $h$ is continuous, i.e. for all $\epsilon > 0$, there exists $\delta > 0$ such that for all $a \in \mathbb{R}^m$ with $\lVert b - a \rVert_\infty < \delta$, we have $\lVert h(b) - h(a) \rVert_\infty < \epsilon$.
+
+Let $b \in \mathbb{R}^m$ and $\epsilon > 0$, and consider $B(h(b), \epsilon) \subseteq \mathbb{R}^n$.
+
+Since open balls are open, by hypothesis, $h^{-1}(B(h(b), \epsilon))$ is open.
+
+Note that $b \in h^{-1}(B(h(b), \epsilon))$. Then there exists $\delta > 0$ such that $B(b, \delta) \subseteq h^{-1}(B(h(b), \epsilon))$.
+
+Let $a \in B(b, \delta)$ (which means $\lVert a - b \rVert_\infty < \delta$). Then $a \in h^{-1}(B(h(b), \epsilon))$. Thus $h(a) \in B(h(b), \epsilon)$ (which means $\lVert h(a) - h(b) \rVert_\infty < \epsilon$). 
+
+Since $\epsilon$ and $b$ are arbitrary, we conclude that $h$ is continuous.
+
 
 
 ### (19) Suppose $h: \mathbb{R}^m \to \mathbb{R}^n$ is a function. Prove that $h$ is continuous if and only if $h^{-1} (F)$ is a closed subset of $\mathbb{R}^m$ for every closed subset $F$ of $\mathbb{R}^n$.
