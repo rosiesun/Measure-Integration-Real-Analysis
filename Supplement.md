@@ -684,6 +684,49 @@ Hence we conclude that $f(x) = |x|^p$ is uniformly continuous when $p \in (0, 1]
 
 ### (13) Prove or give a counterexample: If $f: \mathbb{R}^m \to \mathbb{R}^n$ is continuous and $\lVert f(x) \rVert < \frac{1}{\lVert x \rVert}$ for all $x \in \mathbb{R}^m$ with $\lVert x \rVert > 1$, then $f$ is uniformly continuous.
 
+Let $\epsilon > 0$. Let $R = \frac{2}{\epsilon}$. Let $a, b \in \mathbb{R}^m$. 
+
+Let $F = \\{x \in \mathbb{R}^m: \lVert x \rVert \leq R+1 \\}$.
+
+Consider two cases.
+
+(1) $a, b \in F$.
+
+By 0.79, $f: F \to \mathbb{R}^n$ is uniformly continuous. Thus there exists $\delta_1 > 0$ such that $\lVert f(a) - f(b) \rVert < \epsilon$ for all $a, b \in F$ with $\lVert a - b \rVert < \delta_1$.
+
+(2) At least one of $a$ and $b$ are outside $F$.
+
+Suppose $\lVert b \rVert > R+1$.
+
+Consider $\delta_2 = 1$, i.e. $\lVert a - b \rVert < 1$. By the reverse triangle inequality, we have
+
+$$| \lVert a \rVert - \lVert b \rVert | \leq \lVert a - b \rVert < 1$$
+
+then 
+
+$$| \lVert a \rVert - (R+1) | \leq 1$$
+
+Thus
+
+$$R \leq \lVert a \rVert \leq R+2$$
+
+Therefore
+
+$$
+\begin{aligned}
+\lVert f(a) - f(b) \rVert 
+    &\leq \lVert f(a) \rVert + \lVert f(b) \rVert \\
+    &< \frac{1}{\lVert a \rVert} + \frac{1}{\lVert b \rVert} \\
+    &< \frac{1}{R} + \frac{1}{R+1} \\
+    &< \frac{1}{R} + \frac{1}{R} \\
+    &= \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+    &= \epsilon
+\end{aligned}
+$$
+
+Putting everything together, there exists $\delta = \min(\delta_1, 1)$ such that $\lVert f(a) - f(b) \rVert < \epsilon$ for all $a, b \in \mathbb{R}^m$ with $\lVert a - b \rVert < \delta$.
+
+
 
 ### (14) Prove or give a counterexample: The sum of two uniformly continuous functions from $\mathbb{R}^m$ to $\mathbb{R}^n$ is uniformly continuous.
 
