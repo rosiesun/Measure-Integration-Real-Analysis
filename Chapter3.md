@@ -150,13 +150,14 @@ for each $j = 1, ..., m$. Thus $\mathcal{L}(f, P) \leq \mathcal{L}(g, P)$. Hence
 Suppose $(X, \mathcal{S}, \mu)$ is a measure space and $f: X \to [0, \infty]$ is $\mathcal{S}$-measurable. Then
 
 $$
-\begin{aligned}
+\begin{multiline}
 (3.10)  \int f d\mu = \sup 
-\left\\{\sum_{j=1}^m c_j \mu(A_j) 
-    &: A_1, ..., A_m \text{ are disjoint sets in } \mathcal{S}, \\
-    &c_1, ..., c_m \in [0, \infty), \\
-    &f(x) \geq \sum_{j=1}^m c_j \chi_{A_j}(x) \forall x \in X \right\\}
-\end{aligned}
+    \left\\{
+    \sum_{j=1}^m c_j \mu(A_j): A_1, ..., A_m \text{ are disjoint sets in } \mathcal{S}, \\
+    c_1, ..., c_m \in [0, \infty), \text{ and } \\
+    f(x) \geq \sum_{j=1}^m c_j \chi_{A_j}(x) \forall x \in X 
+    \right\\}
+\end{multiline}
 $$
 
 Proof:
@@ -748,7 +749,7 @@ Suppose $(X, \mathcal{S}, \mu)$ is a measure space ad $f, g \in \mathcal{L}^1(\m
 
 
 ### 3.44 approximation by simple functions
-Suppose $\mu$ is a measure and $f \in \mathcal{L}^1(\mu)$. Then for every $\epsion > 0$, there exists a simple function $g \in \mathcal{L}^1(\mu)$ such that 
+Suppose $\mu$ is a measure and $f \in \mathcal{L}^1(\mu)$. Then for every $\epsilon > 0$, there exists a simple function $g \in \mathcal{L}^1(\mu)$ such that 
 
 $$\lVert f - g \rVert_1 < \epsilon .$$
 
@@ -770,12 +771,13 @@ $$
 \begin{aligned}
 \lVert f - g \rVert_1 
     &= \lVert (f^+ - g_1) - (f^- - g_2) \rVert_1 \\
-    &= \int |(f^+ - g_1) - (f^- - g_2)| d\mu \\
-    &= \int (f^+ - g_1) + (f^- - g_2) d\mu \\
+    &= \int \left | (f^+ - g_1) - (f^- - g_2) \right| \\
     &= \int (f^+ - g_1) d\mu + \int (f^- - g_2) d\mu \\
     &< \epsilon
 \end{aligned}
 $$
+
+The third equality follows from the fact that $(f^+ - g_1)$ and $(f^- - g_2)$ have different supports. If $(f^+ - g_1) \geq 0$ then $(f^- - g_2) = 0$, and vice versa.
 
 
 
