@@ -686,9 +686,7 @@ Hence we conclude that $f(x) = |x|^p$ is uniformly continuous when $p \in (0, 1]
 
 Let $\epsilon > 0$. Let $R = \frac{2}{\epsilon}$. Let $a, b \in \mathbb{R}^m$. 
 
-Let $F = \\{x \in \mathbb{R}^m: \lVert x \rVert \leq R+1 \\}$.
-
-Consider two cases.
+Let $F = \\{x \in \mathbb{R}^m: \lVert x \rVert \leq R+1 \\}$. Consider two cases.
 
 (1) $a, b \in F$.
 
@@ -726,17 +724,50 @@ $$
 
 Putting everything together, there exists $\delta = \min(\delta_1, 1)$ such that $\lVert f(a) - f(b) \rVert < \epsilon$ for all $a, b \in \mathbb{R}^m$ with $\lVert a - b \rVert < \delta$.
 
+Hence we conclude that $f$ is uniformly continuous.
+
 
 
 ### (14) Prove or give a counterexample: The sum of two uniformly continuous functions from $\mathbb{R}^m$ to $\mathbb{R}^n$ is uniformly continuous.
+
+Suppose $f, g: \mathbb{R}^m \to \mathbb{R}^n$ are uniformly continuous.
+
+Let $\epsilon > 0$.
+
+There exists $\delta_1 > 0$ such that $\lVert f(a) - f(b) \rVert < \epsilon/2$ for all $a, b \in \mathbb{R}^m$ with $\lVert a - b \rVert < \delta_1$.
+
+There exists $\delta_2 > 0$ such that $\lVert g(a) - g(b) \rVert < \epsilon/2$ for all $a, b \in \mathbb{R}^m$ with $\lVert a - b \rVert < \delta_2$.
+
+Let $\delta = \min(\delta_1, \delta_2)$. We have
+
+$$
+\begin{aligned}
+\lVert (f+g)(a) - (f+g)(b) \rVert 
+    &= \lVert f(a) + g(a) - f(b) - f(b) \rVert \\
+    &\leq \lVert f(a) - f(b) \rVert + \lVert g(a) - g(b) \rVert \\
+    &< \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+    &= \epsilon
+\end{aligned}
+$$
+
+Thus there exists $\delta > 0$ such that $(f+g)(a) - (f+g)(b) < \epsilon$ for all $a, b \in \mathbb{R}^m$ with $\lVert a - b \rVert < \delta$. 
+
+Hence we conclude that $f+g$ is uniformly continuous.
 
 
 
 ### (15) Prove or give a counterexample: The product of two uniformly continuous functions from $\mathbb{R}$ to $\mathbb{R}$ is uniformly continuous.
 
+Consider $f(x) = g(x) = x$. 
+
+Let $\epsilon > 0$. There exists $\delta = \epsilon$ such that $|f(a) - f(b)| < \epsilon$ for all $a, b \in \mathbb{R}$ with $|a-b| < \delta$. Thus $f$ and $g$ are uniformly continuous.
+
+However $(fg)(x) = x^2$ which is not uniformly continuous, by Example 0.78.
+
 
 
 ### (16) Prove or a give a counterexample: If $f: \mathbb{R} \to (0, \infty)$ is uniformly continuous, then the function $\frac{1}{f}$ is uniformly continuous on $\mathbb{R}$.
+
 
 
 
@@ -763,9 +794,9 @@ Since $a$ is arbitrary, we conclude that that $B(b, \delta) \subseteq h^{-1}(G)$
 $\Leftarrow$
 Suppose $h^{-1} (G)$ is an open subset of $\mathbb{R}^m$ for every open subset $G$ of $\mathbb{R}^n$.
 
-We want to show that $h$ is continuous, i.e. for all $\epsilon > 0$, there exists $\delta > 0$ such that for all $a \in \mathbb{R}^m$ with $\lVert b - a \rVert_\infty < \delta$, we have $\lVert h(b) - h(a) \rVert_\infty < \epsilon$.
+We want to show that $h$ is continuous. In other words, for $b \in \mathbb{R}^m$, for all $\epsilon > 0$, there exists $\delta > 0$ such that for all $a \in \mathbb{R}^m$ with $\lVert b - a \rVert_\infty < \delta$, we have $\lVert h(b) - h(a) \rVert_\infty < \epsilon$.
 
-Let $b \in \mathbb{R}^m$ and $\epsilon > 0$, and consider $B(h(b), \epsilon) \subseteq \mathbb{R}^n$.
+Let $\epsilon > 0$, and consider $B(h(b), \epsilon) \subseteq \mathbb{R}^n$.
 
 Since open balls are open, by hypothesis, $h^{-1}(B(h(b), \epsilon))$ is open.
 
@@ -779,14 +810,56 @@ Since $\epsilon$ and $b$ are arbitrary, we conclude that $h$ is continuous.
 
 ### (19) Suppose $h: \mathbb{R}^m \to \mathbb{R}^n$ is a function. Prove that $h$ is continuous if and only if $h^{-1} (F)$ is a closed subset of $\mathbb{R}^m$ for every closed subset $F$ of $\mathbb{R}^n$.
 
+$\Rightarrow$
+
+Suppose $h$ is continuous. 
+
+Suppose $F \subseteq \mathbb{R}^n$ is closed.
+
+Suppose $x_1, x_2, ...$ is a convergent sequence in $h^{-1}(F)$ and $\lim_{k \to \infty} x_k = x$ for some $x \in \mathbb{R}^m$.
+
+Since $h$ is continuous, by 0.76, $\lim_{k \to \infty} h(x_k) = h(x)$. Note that $h(x_1), h(x_2), ... \in F$. Since $F$ is closed, by 0.62, $h(x) \in F$.
+
+Then $x \in h^{-1}(F)$. Thus $h^{-1}(F) \subseteq \mathbb{R}^m$ is closed by 0.62.
+
+$\Leftarrow$
+
+Suppose $h^{-1} (F)$ is a closed subset of $\mathbb{R}^m$ for every closed subset $F$ of $\mathbb{R}^n$.
+
+Let $G \subseteq \mathbb{R}^n$ be open. Then $\mathbb{R}^n \setminus G$ is closed. By hypothesis, $h^{-1}(\mathbb{R}^n \setminus G)$ is closed.
+
+Note that 
+
+$$h^{-1}(\mathbb{R}^n \setminus G) = \mathbb{R}^m \setminus h^{-1}(G)$$ 
+
+Thus $\mathbb{R}^m \setminus h^{-1}(G)$ is closed and $h^{-1}(G) \subseteq \mathbb{R}^m$ is open.
+
+In other words, $h^{-1}(G)$ is open for every open subset $G \subset \mathbb{R}^n$. 
+
+By Exercise 18, $h$ is continuous.
+
+
+### (24) Prove or give a counterexample: If $G$ is a bounded open subset of $\mathbb{R}$ and $h: G \to \mathbb{R}$ is continuous, then $h(G)$ is an open subset of $\mathbb{R}$.
+
+
+
+### (25) Prove or give a counterexample: If $F$ is a closed subset of $\mathbb{R}$ and $h: F \to \mathbb{R}$ is continuous, then $h(F)$ is a closed subset of $\mathbb{R}$.
+
+
+
+### A sequence $a_1, a_2, ...$ of elements of $\mathbb{R}^n$ is called a Cauchy sequence if for every $\epsilon > 0$, there exists $m \in \mathbb{Z}^+$ such that $|a_j - a_k| < \epsilon$ for all integers $j, k > m$.
+
 
 ### (32) Prove that every convergent sequence of elements of $\mathbb{R}^n$ is a Cauchy sequence.
+
 
 
 ### (33) 
 #### (a) Prove that every Cauchy sequence of elements of $\mathbb{R}^n$ is bounded.
 
+
 #### (b) Prove that if some subseqeunce of a Cauchy sequence of elements of $\mathbb{R}^n$ converges to some $L \in \mathbb{R}^n$, then the Cauchy sequence has limit $L$.
+
 
 #### (c) Prove that every Cauchy sequence of elements of $\mathbb{R}^n$ converges.
 
