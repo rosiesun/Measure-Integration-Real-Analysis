@@ -15,10 +15,17 @@ The length $l(I)$ of an open interval $I$ is defined by
 $$
 l(I) =
 \begin{cases}
-    b - a & \text{ if } I = (a, b) \text{ for some } a, b \in \mathbb{R} \text{ with } a < b \\
-    0 & \text{ if } I = \emptyset \\
-    \infty & \text{ if } I = (-\infty, a) \text{ or } I = (a, \infty) \text{ for some } a \in \mathbb{R}} \\
-    \infty & \text{ if } I = (-\infty, \infty)
+    b - a & \text{ if } 
+        I = (a, b) \text{ for some } a, b \in \mathbb{R} \text{ with } a < b \\
+    
+    0 & \text{ if } 
+        I = \emptyset \\
+
+    \infty & \text{ if } 
+        I = (-\infty, a) \text{ or } I = (a, \infty) \text{ for some } a \in \mathbb{R} \\
+
+    \infty & \text{ if } 
+        I = (-\infty, \infty)
 \end{cases}
 $$
 
